@@ -14,7 +14,16 @@
 
 ---
 
-## 2026-09-23 16:00 ET · Claude (Claude Code, Opus 5.5) · HTTPS live; run of show v1 and closing page built (not yet published)
+## 2026-09-23 16:10 ET · Claude · Published run of show v1 + closing page
+
+**Did:** With Blake's OK, committed `c9abf45` and pushed. The Actions deploy run 35911503101 succeeded.
+**Checked:** https://program.stratforddemocrats.com serves the new Program section (it contains “Governor Ned Lamont” and the “Anthony Afriyie” link) and `#congratulations`. `congratulations.svg` returns 200 (10.7 KB). `http://` now 301s to `https://` (the earlier cached 200 has cleared).
+**Blocked on / waiting for:** event team answers on D14, D15, and D17; sponsors (D6); the Terry Backer blurb; run of show v2 if it changes.
+**Next step (exact):** Blake test-scans a printed proof of `print/qr-program.svg` on iPhone and Android, then sends the table cards to print (by Thu 9/24). Apply run-of-show updates using `content/run-of-show.md` → “How to apply a new version.”
+
+---
+
+## 2026-09-23 16:00 ET · Claude (Claude Code, Opus 5.5) · HTTPS live; run of show v1 and closing page built
 
 **Did:**
 - **Domain live.** Blake added the Wix CNAME. The domain didn't get a certificate on its own, because it was attached before the DNS record existed. Re-saving the custom domain (API: clear it, then set it again) got it **issued** right away (Let's Encrypt, expires 2026-12-22). **Enforce HTTPS is on.**
@@ -34,7 +43,7 @@
 **Decisions:** D16 adopted; D17 proposed; D14 and D15 updated.
 
 **Blocked on / waiting for:**
-- **Blake:** OK to publish these changes (commit and push to `main` deploys them).
+- ~~Blake: OK to publish~~ Approved and published at 16:10 (see the entry above).
 - **Event team:** confirm “Presented by” (D17), the volunteer segment naming (D14), and the “Paid for by” question (D15).
 
 **Next step (exact):** once Blake approves, `git add -A && git commit` (message: "Add run of show v1 and closing Congratulations page") and push. Wait for the Actions run to finish, then load https://program.stratforddemocrats.com on a phone and check the Program and closing sections. When run of show v2 arrives, follow “How to apply a new version” in `content/run-of-show.md`.
