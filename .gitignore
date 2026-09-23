@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Private / draft material. The GitHub repo is PUBLIC (a GitHub Pages requirement on free accounts).
+reference/
+content/private/
+
+# Local tool state
+.claude/settings.local.json
+node_modules/
