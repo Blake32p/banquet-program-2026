@@ -36,7 +36,8 @@ A **digital-only program** for the Stratford Democratic Town Committee's 2026 An
 | `source-assets/` | Original, full-size photos | No |
 | `Logos/` | Logo files supplied by the owner. Use `stratford-democrats-light.svg` on dark backgrounds | No |
 | `scripts/check-budget.sh` | Page-weight check. Run it before every handoff | No |
-| `.github/workflows/pages.yml` | GitHub Pages deploy of `public/` (used if decision D1 = GitHub Pages) | No |
+| `print/` | Table-card QR code (`qr-program.svg` for print, plus a 1200px PNG). It encodes `HTTPS://PROGRAM.STRATFORDDEMOCRATS.COM` | No |
+| `.github/workflows/pages.yml` | Deploys `public/` to GitHub Pages on every push to `main` that changes `public/` | No |
 
 ## Non-negotiables
 
@@ -81,9 +82,13 @@ Open http://127.0.0.1:4173 and check it at 320, 375, 414, and 768 px wide. In Ch
 bash scripts/check-budget.sh
 ```
 
-## Deploy
+## Deploy (D1, adopted 2026-09-23)
 
-See `docs/02-hosting-research.md` and decision **D1** in `docs/DECISIONS.md`. The recommended setup is GitHub Pages, deployed by `.github/workflows/pages.yml`, with the custom domain `program.stratforddemocrats.com`. The printed QR code must point to **our own domain**, never to a `*.github.io`, `*.vercel.app`, or `*.chatgpt.site` address.
+- **Repo:** https://github.com/Blake32p/banquet-program-2026 (**public**). The branch is `main`.
+- **Live:** https://program.stratforddemocrats.com. GitHub Pages serves it, and the DNS is a CNAME `program` → `blake32p.github.io` at Wix. The old `blake32p.github.io/banquet-program-2026/` address redirects to it.
+- **How to publish:** commit a change under `public/` and push to `main` (with the owner's OK). The workflow `.github/workflows/pages.yml` deploys in about 1 minute. Watch it with `gh run list -R Blake32p/banquet-program-2026`. Guests who already have the page open may see the old copy for up to 10 more minutes (GitHub sets `max-age=600`).
+- Changes to docs, content, or print files don't trigger a deploy.
+- The printed QR code points to **our own domain**. Never point it at a `*.github.io`, `*.vercel.app`, or `*.chatgpt.site` address.
 
 ## Writing style for any new copy
 

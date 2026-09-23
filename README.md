@@ -2,7 +2,8 @@
 
 A fast, phone-first web page that guests open from a QR code on their table on **Sunday, September 27, 2026**.
 
-- **Live address (planned):** https://program.stratforddemocrats.com (decision D1)
+- **Live address:** https://program.stratforddemocrats.com (GitHub Pages, repo [Blake32p/banquet-program-2026](https://github.com/Blake32p/banquet-program-2026))
+- **Table-card QR code:** `print/qr-program.svg`
 - **The website itself:** `public/index.html`. It's one file, and there's nothing to install or build.
 - **Rules for AI agents (Codex or Claude):** [AGENTS.md](AGENTS.md)
 - **Where things stand right now:** [docs/WORKLOG.md](docs/WORKLOG.md) (newest entry at the top)

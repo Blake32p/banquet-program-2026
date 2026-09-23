@@ -43,9 +43,18 @@ ChatGPT Sites (launched as “Sites” in Codex on Jun 2, 2026, and renamed in t
 ### Why not Vercel Hobby?
 Vercel is technically excellent. But Hobby is “non-commercial **personal** use only,” and Vercel counts advertising as commercial. The 2026 banquet **sold ad-book ads**. If the program shows sponsors' ads, Vercel Hobby is clearly the wrong fit. Vercel Pro ($20/month) removes that concern if the committee prefers Vercel.
 
-## Recommended setup (about 30–45 minutes, owner's accounts)
+## Setup: status as of 2026-09-23
 
-> These steps are outward-facing, so the **owner** (Blake) does them or approves them one at a time.
+> Blake approved D1 on 2026-09-23. Claude did steps 1–3 with his `gh` login. **Step 4 needs Blake in Wix.**
+
+- ✅ 1–2. The repo is https://github.com/Blake32p/banquet-program-2026 (public). The first deploy passed, and the page was checked live at the github.io address.
+- ✅ 3. The Pages source is GitHub Actions, and the custom domain is set to `program.stratforddemocrats.com`.
+- ⏳ 4. **Wix CNAME** (Blake).
+- ⏳ 5. Optional domain verification (Blake, GitHub UI).
+- ⏳ 6. HTTPS certificate, then **Enforce HTTPS** (Claude or Codex, after DNS).
+- ⏳ 7. Phone test on cellular.
+
+Original steps, for reference or for repeating on another repo:
 
 1. **Create the repo** (public): `Blake32p/banquet-program-2026`, or put it under a free GitHub organization for the DTC so it can be handed over later. First check `.gitignore` and confirm `git status` shows no private files.
 2. **Push** this folder. The workflow `.github/workflows/pages.yml` deploys `public/` on every push to `main` that changes `public/`.

@@ -11,9 +11,10 @@
 - **Quiet zone:** a margin of 4 modules on every side.
 - **Paper:** matte, because gloss causes glare under ballroom lights.
 - **Label under the code:** “**Scan for tonight's program**” (or “today's”; it's a brunch) plus the address in plain text: `program.stratforddemocrats.com`.
-- **Generate** it offline (no online generator):
+- ✅ **Generated 2026-09-23** in `print/`: `qr-program.svg` (vector, for the designer or printer) and `qr-program-1200px.png`. It's a version 2 code (25×25 modules), error correction M, navy `#0a1230` on white, with a 4-module quiet zone. A decode check (Chrome BarcodeDetector) returned exactly `HTTPS://PROGRAM.STRATFORDDEMOCRATS.COM`.
+  To regenerate:
   ```bash
-  npx --yes qrcode -t svg -e M -q 4 -d 0a1230 -l ffffff -o reference/qr-program.svg "HTTPS://PROGRAM.STRATFORDDEMOCRATS.COM"
+  npx --yes qrcode@1 -t svg -e M -q 4 -d 0a1230 -l ffffff -o print/qr-program.svg "HTTPS://PROGRAM.STRATFORDDEMOCRATS.COM"
   ```
 - **Test before sending to print:** iPhone Camera, Android Camera/Google Lens, and one older phone. Test at arm's length, in a dim room, and from a printed proof (not the screen).
 

@@ -9,13 +9,15 @@ Legend: 👤 owner (Blake) · 🏛️ committee (Kathleen/Karen/event team) · �
 - ✅ Project brief, design system, performance budget, decisions log, worklog
 - ✅ Pull honoree bios verbatim and compress photos
 - ✅ Working prototype `public/index.html` (v0, with draft placeholders)
-- 👤 **Decide D1** (host and QR address). The recommendation is GitHub Pages + `program.stratforddemocrats.com`.
-- 👤 If D1 is approved: create the GitHub repo, push, turn on Pages, and add the Wix CNAME (steps in doc 02). **Start DNS today** so HTTPS is ready by Thursday.
+- ✅ D1 approved: GitHub Pages + `program.stratforddemocrats.com`
+- ✅ Repo created and pushed, Pages turned on, first deploy passed, custom domain set (Claude)
+- ✅ QR code generated and decode-checked → `print/` (Claude)
+- 👤 **Add the Wix CNAME `program` → `blake32p.github.io` today**, so HTTPS is ready by Thursday
 - 🏛️ Send the content request (the email draft is below).
 
 ## Thu Sep 24: QR code locked, content integration (Codex)
 - 👤/🤖 Confirm `https://program.stratforddemocrats.com` loads over HTTPS on a phone using cellular data.
-- 🤖 Generate the QR code (see “QR code spec” in doc 05). 👤 Test-scan it. Then send the table-card artwork to print.
+- 👤 Test-scan `print/qr-program.svg` once the domain is live. Then send the table-card artwork to print.
 - 🤖 Put the run of show into `content/run-of-show.md` → `#program`, as soon as it arrives.
 - 🤖 Add Volunteers of the Year and the Terry Backer blurb when they arrive.
 - 🏛️ Review the v0 design on a phone. Collect feedback in one message.

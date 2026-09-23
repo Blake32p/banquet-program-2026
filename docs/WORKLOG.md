@@ -14,6 +14,38 @@
 
 ---
 
+## 2026-09-23 14:40 ET · Claude (Claude Code, Opus 5.5) · GitHub Pages set up, photo credit corrected, QR code generated
+
+**Did:**
+- **Corrected the photo credit:** “Photo by Luke Franke” belongs to **Corrie’s** photo, not Jill’s. It's the `<figcaption>` on Corrie’s photo on the event page, and my kickoff text extraction had attached it to the end of Jill’s bio. Fixed in `public/index.html`, `content/honorees.md`, `AGENTS.md`, and the doc 05 checklist.
+- **D1 adopted** (Blake approved): GitHub Pages + `program.stratforddemocrats.com`.
+- `git init` (branch `main`). Repo-local identity: Blake Powers `380243+Blake32p@users.noreply.github.com`, matching the main site repo; the global git config wasn't touched. First commit `7d4ff9d`.
+- Created the **public** repo https://github.com/Blake32p/banquet-program-2026 and pushed.
+- Turned on Pages (`build_type=workflow`). The first Actions deploy passed (run 35903142549). The custom domain is set to `program.stratforddemocrats.com`.
+- Generated the QR code → `print/qr-program.svg` and `print/qr-program-1200px.png` (version 2, 25×25 modules, ECC M, navy on white).
+
+**Checked:**
+- Before setting the custom domain, the live site at the github.io address returned 200 for the page, a photo, a font, and the logo. The HTML is 11.7 KB gzipped, served with `cache-control: max-age=600` and gzip.
+- The live HTML has the credit under Corrie’s photo.
+- The QR code was decoded with Chrome’s BarcodeDetector and returns exactly `HTTPS://PROGRAM.STRATFORDDEMOCRATS.COM`.
+- `git status` before the commit: `reference/` is ignored, and no private files are included.
+
+**Decisions:** D1 → ADOPTED.
+
+**Notes for later (after the event):** the Actions run warns that `actions/checkout@v4`, `configure-pages@v5`, and `deploy-pages@v4` target Node 20. They're forced onto Node 24 and still work. Bump them to their latest majors **after** the event, not during event week.
+
+**Blocked on / waiting for:**
+- **Blake:** add the DNS record in Wix: **CNAME, Host `program`, Value `blake32p.github.io`**. Optional: verify the domain in GitHub (github.com/settings/pages → Add a domain → `stratforddemocrats.com` → add the TXT record it shows in Wix).
+- **Committee:** content items (email draft in doc 04).
+
+**Next step (exact):**
+1. Once `dig +short CNAME program.stratforddemocrats.com @1.1.1.1` returns `blake32p.github.io.` and `gh api repos/Blake32p/banquet-program-2026/pages --jq .https_certificate.state` returns `approved`, run:
+   `gh api -X PUT repos/Blake32p/banquet-program-2026/pages -F https_enforced=true`
+   If the certificate stays “none” for more than about 30 minutes after DNS resolves, clear the custom domain and set it again in repo Settings → Pages. That re-triggers the certificate request.
+2. Test https://program.stratforddemocrats.com on a phone using cellular data, then scan `print/qr-program.svg` from a printed proof.
+
+---
+
 ## 2026-09-23 · Claude (Claude Code, Opus 5.5) · Kickoff: research, plan, v0 prototype
 
 **Did:**
