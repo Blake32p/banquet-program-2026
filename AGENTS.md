@@ -46,6 +46,8 @@ A **digital-only program** for the Stratford Democratic Town Committee's 2026 An
 - Bios are **verbatim** from `content/honorees.md`. Don't edit, shorten, or "improve" them. Copy changes go into `content/` first, then into the page.
 - Use real typography: curly apostrophes (’), en dashes for ranges (11 AM – 2 PM), and the exact name spellings: **D’Angelo-Powers, Folsom-O’Keefe, Afriyie**.
 - Credit Corrie’s photo: “Photo by Luke Franke.” (It is the caption on her photo on the event page.)
+- The **closing “Congratulations!” page** (from the last page of the Canva program) is the **end of the program**. Keep it last, and keep its text exactly as written.
+- The program schedule comes from the committee's run of show (`content/run-of-show.md`). Changes are expected, so apply each new version there first.
 
 **Speed** (guests may have weak cell service)
 - No frameworks, no build step, no CDNs, no third-party scripts, trackers, embeds, or web-font services. Everything is served from `public/`.

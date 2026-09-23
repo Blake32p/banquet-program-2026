@@ -87,12 +87,18 @@ section>h2::after{content:"";display:block;width:3.5rem;height:3px;background:va
 
 /* Program schedule */
 .schedule{list-style:none;margin:1.5rem 0 0;padding:0}
-.schedule li{display:grid;grid-template-columns:6.25rem 1fr;gap:.25rem 1rem;padding:1.125rem 0;border-top:1px solid var(--rule)}
-.schedule li:last-child{border-bottom:1px solid var(--rule)}
+.schedule>li{display:grid;grid-template-columns:6.25rem 1fr;gap:.25rem 1rem;padding:1.125rem 0;border-top:1px solid var(--rule)}
+.schedule>li:last-child{border-bottom:1px solid var(--rule)}
 .schedule time{color:var(--gold);font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;padding-top:.1em}
 .schedule h3{font-size:1.3125rem;margin-bottom:.2em}
 .schedule p{color:var(--text-soft);margin:0}
-@media (max-width:22rem){.schedule li{grid-template-columns:1fr}}
+.people,.segments{list-style:none;margin:.5rem 0 0;padding:0}
+.people li{color:var(--text-soft);padding:.15rem 0}
+.schedule strong{color:var(--text);white-space:nowrap}
+.segments li{margin-top:.875rem;padding:.125rem 0 .125rem 1rem;border-left:2px solid var(--rule)}
+.segments .seg{color:var(--gold);font-weight:700}
+.segments .honor{font-size:1.3125rem;font-weight:700;line-height:1.3;margin:.1rem 0}
+@media (max-width:30rem){.schedule>li{grid-template-columns:1fr;gap:.125rem}}  /* phones: time sits above the segment so details get full width */
 
 /* Honorees */
 .jump{display:flex;flex-wrap:wrap;gap:.625rem;list-style:none;padding:0;margin:1.25rem 0 0}
@@ -124,9 +130,6 @@ details:not([open]) .less{display:none}
 .sponsor-list li{background:var(--bg-raised);border-radius:12px;padding:.875rem 1.125rem;font-weight:700}
 
 /* About */
-.thanks{margin:1.5rem 0 2.5rem;padding:1.75rem 1.5rem;border-radius:18px;background:var(--bg-raised);border:1px solid rgba(236,192,98,.22);text-align:center}
-.thanks p{font-family:var(--script);font-style:italic;font-weight:700;font-size:1.375rem;line-height:1.45;color:var(--text)}
-.thanks cite{display:block;font-style:normal;color:var(--gold);font-weight:700}
 .about-block{margin-bottom:2.25rem}
 .about-block h3{font-size:1.5rem;margin-bottom:.5rem}
 .actions{list-style:none;padding:0;margin:1rem 0 0;display:grid;gap:.75rem}
@@ -134,6 +137,13 @@ details:not([open]) .less{display:none}
 .button .hint{color:var(--text-soft);font-weight:400;font-size:1rem;white-space:nowrap}
 .button-primary{background:var(--gold);color:var(--bg);border-color:var(--gold)}
 .button-primary .hint{color:#26304f}
+/* Closing page (from the Canva program's last page). Text on the darker part of the gradient is 7:1 or more. */
+.finale{margin:3rem calc(-1 * var(--gutter)) 0;padding:1.5rem var(--gutter) 2.75rem;text-align:center;color:#b8e3f6;font-weight:700;font-size:1.3125rem;line-height:1.45;
+  background:linear-gradient(to bottom,rgba(8,20,64,0) 55%,rgba(8,20,64,.6) 100%),radial-gradient(ellipse 90% 50% at 50% 27%,#3a67cc 0%,#2149ad 45%,#16358f 75%,#0b1c55 100%);scroll-margin-top:1rem}
+.finale-art{width:100%;max-width:32rem;margin:0 auto 1rem}
+.finale p{margin:0 auto .9em;max-width:25rem}
+.finale-sign{margin-top:1.75rem !important}
+@media (min-width:44rem){.finale{margin-inline:0;border-radius:18px}}
 footer{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--rule);color:var(--text-soft);font-size:1rem;text-align:center}
 
 /* Bottom navigation */
@@ -158,6 +168,7 @@ footer{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--rule);col
   .tabbar,.skip,.draft-banner,.jump,summary{display:none}
   section{break-inside:auto;padding-block:1.5rem 0}
   .honoree{break-inside:avoid;border-color:#ccc}
+  .finale{-webkit-print-color-adjust:exact;print-color-adjust:exact;break-before:page;break-inside:avoid;margin:0;border-radius:0}
   .logo [fill="#fff"]{fill:#0a1230}
   .logo [stroke="#fff"]{stroke:#0a1230}
 }
@@ -187,14 +198,29 @@ footer{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--rule);col
 
   <section id="program" aria-labelledby="program-h">
     <h2 id="program-h">Program</h2>
-    <p class="draft-note">Draft: these times and segments are placeholders until the final run of show arrives. See <code>content/run-of-show.md</code>.</p>
+    <!-- DRAFT COPY: needs committee approval -->
+    <p class="lede">Times are approximate.</p>
+    <!-- Source: content/run-of-show.md (run of show v1, 2026-09-23). Keep the two in sync. -->
     <ol class="schedule">
-      <li><time>11:00 AM</time><div><h3>Registration &amp; brunch</h3><p>Check in, find your table, and enjoy brunch.</p></div></li>
-      <li><time>11:45 AM</time><div><h3>Welcome &amp; opening remarks</h3><p>Presenter to be confirmed</p></div></li>
-      <li><time>12:00 PM</time><div><h3>Terry Backer Environmental Champion Award</h3><p><a href="#corrie">Corrie Folsom-O’Keefe</a></p></div></li>
-      <li><time>12:20 PM</time><div><h3>Democrats of the Year</h3><p><a href="#anthony">Anthony Afriyie</a> and <a href="#jill">Jill D’Angelo-Powers</a></p></div></li>
-      <li><time>12:50 PM</time><div><h3>Volunteers of the Year</h3><p><a href="#volunteers">Honorees to be announced</a></p></div></li>
-      <li><time>1:30 PM</time><div><h3>Closing remarks</h3><p>Presenter to be confirmed</p></div></li>
+      <li><time>11:00 AM</time><div><h3>Arrival</h3><p>Coffee, tea &amp; cocktails</p></div></li>
+      <li><time>11:20 AM</time><div><h3>Welcome remarks</h3>
+        <ul class="people">
+          <li>Stratford Democrats Chair <strong>Kathleen Callahan</strong></li>
+          <li>Governor <strong>Ned Lamont</strong></li>
+          <li>Senator <strong>Richard Blumenthal</strong></li>
+          <li>Lieutenant Governor <strong>Susan Bysiewicz</strong></li>
+          <li>Secretary of the State <strong>Stephanie Thomas</strong></li>
+        </ul></div></li>
+      <li><time>12:00 PM</time><div><h3>Brunch</h3></div></li>
+      <li><time>1:00 PM</time><div><h3>Awards</h3>
+        <ol class="segments">
+          <li><p class="seg">Opening remarks</p><p>Stratford Mayor <strong>David Chess</strong></p></li>
+          <li><p class="seg">Campaign Volunteer Recognition</p><p><strong>Kathleen Callahan</strong></p></li>
+          <li><p class="seg">Terry Backer Environmental Champion</p><p class="honor"><a href="#corrie">Corrie <span class="nowrap">Folsom-O’Keefe</span></a></p><p>Presented by State Representative <strong>Joe Gresko</strong></p></li>
+          <li><p class="seg">Stratford Democrat of the Year</p><p class="honor"><a href="#anthony">Anthony Afriyie</a></p><p>Presented by State Senate Candidate <strong>Carolann Reid</strong></p></li>
+          <li><p class="seg">Stratford Democrat of the Year</p><p class="honor"><a href="#jill">Jill <span class="nowrap">D’Angelo-Powers</span></a></p><p>Presented by Stratford Democrats Political Director and Treasurer <strong>Karen Tracy</strong></p></li>
+        </ol></div></li>
+      <li><time>2:00 PM</time><div><h3>Departure</h3></div></li>
     </ol>
   </section>
 
@@ -270,10 +296,6 @@ footer{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--rule);col
   <section id="about" aria-labelledby="about-h">
     <h2 id="about-h">About</h2>
 
-    <blockquote class="thanks">
-      <p>Thank you, Anthony, Jill, and Corrie, for your dedication and commitment to the care, protection, and enhancement of our beloved town of Stratford.</p>
-      <cite>Karen and Kathleen</cite>
-    </blockquote>
 
     <div class="about-block">
       <h3>Stratford Democratic Town Committee</h3>
@@ -297,13 +319,23 @@ footer{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--rule);col
         <li><a class="button" href="https://www.stratforddemocrats.com">stratforddemocrats.com <span class="hint">↗</span></a></li>
       </ul>
     </div>
-
-    <footer>
-      <p>Stratford Democratic Town Committee<br>
-      <a href="mailto:info@stratforddemocrats.com">info@stratforddemocrats.com</a> · <a href="tel:+12032963147">203-296-3147</a></p>
-      <!-- TODO(confirm): “Paid for by…” attribution line, if the Chair or Treasurer says it's required. -->
-    </footer>
   </section>
+
+  <!-- Closing page, reproduced from the last page of the Canva program (Karen and Kathleen's note).
+       Art: assets/img/congratulations.svg, the page's vector art without its background, text, or a stray mark. The text is live HTML. -->
+  <section id="congratulations" class="finale" aria-labelledby="congrats-h">
+    <h2 id="congrats-h" class="sr-only">Congratulations!</h2>
+    <img class="finale-art" src="assets/img/congratulations.svg" width="516" height="500" alt="" loading="lazy" decoding="async">
+    <p>Thank you, Anthony, Jill, and Corrie&nbsp;–</p>
+    <p>for your dedication and commitment to the care, protection, and enhancement of our beloved town of Stratford.</p>
+    <p class="finale-sign">Karen and Kathleen</p>
+  </section>
+
+  <footer>
+    <p>Stratford Democratic Town Committee<br>
+    <a href="mailto:info@stratforddemocrats.com">info@stratforddemocrats.com</a> · <a href="tel:+12032963147">203-296-3147</a></p>
+    <!-- TODO(confirm): “Paid for by…” attribution line, if the Chair or Treasurer says it's required. -->
+  </footer>
 </main>
 
 <nav class="tabbar" aria-label="Program sections">
@@ -324,6 +356,7 @@ footer{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--rule);col
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)mark(e.target.id)})},{rootMargin:'-40% 0px -55% 0px'});
     Object.keys(byId).forEach(function(id){var s=document.getElementById(id);if(s)io.observe(s)});
+    var fin=document.getElementById('congratulations');if(fin){byId.congratulations=byId.about;io.observe(fin)}
   }
   addEventListener('beforeprint',function(){[].forEach.call(document.querySelectorAll('details'),function(d){d.open=true})});
 })();

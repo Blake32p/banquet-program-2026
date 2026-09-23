@@ -14,6 +14,33 @@
 
 ---
 
+## 2026-09-23 16:00 ET · Claude (Claude Code, Opus 5.5) · HTTPS live; run of show v1 and closing page built (not yet published)
+
+**Did:**
+- **Domain live.** Blake added the Wix CNAME. The domain didn't get a certificate on its own, because it was attached before the DNS record existed. Re-saving the custom domain (API: clear it, then set it again) got it **issued** right away (Let's Encrypt, expires 2026-12-22). **Enforce HTTPS is on.**
+- **Run of show v1** (Blake, 3:37 PM): saved as `reference/run-of-show-2026-09-23.docx` (gitignored). Raw text and the guest-facing table are in `content/run-of-show.md`. Rebuilt `#program`: Arrival 11:00 → Welcome remarks 11:20 (5 speakers) → Brunch 12:00 → Awards 1:00 (5 segments, with award lines linking to honoree cards) → Departure 2:00. On phones, the time now sits above each segment.
+- **Closing page** (Blake: “the final page… needs to be included basically as it is… the end of the program”):
+  - Extracted the Canva page's own vector art (lettering, burst, rays, and 14 stars) with `pdftocairo -svg`. Removed the background JPEG, the text glyphs, and a stray 24×13 dark mark that appears in the PDF. Pruned unused defs and rounded coordinates → `public/assets/img/congratulations.svg` (38.8 KB, 10.5 KB gzipped).
+  - It's the new last section, `#congratulations`: a royal-blue gradient with the exact text as live HTML in `#b8e3f6` (7:1 or more).
+  - The About thank-you blockquote was removed so the note isn't repeated. The footer moved below the closing page. The About tab is highlighted while the closing page is on screen.
+- Docs: AGENTS (closing page must stay last; the run of show is the source), DECISIONS D14–D17, doc 03 (layout order), `content/sponsors-and-about.md`.
+
+**Checked:**
+- https://program.stratforddemocrats.com serves every asset with 200 and the right certificate subject. The github.io address 301s to it.
+- Plain `http://` still returned a cached 200 about 8 minutes after enforcement (Fastly `X-Cache: HIT`). Recheck later; the QR code uses https anyway.
+- Budget: HTML 12.5 KB gzipped, first visit 115 KB. OK.
+- No horizontal overflow at 320, 375, or 768 px. Screenshots of the Awards list and the closing page were reviewed at 375 and 768.
+
+**Decisions:** D16 adopted; D17 proposed; D14 and D15 updated.
+
+**Blocked on / waiting for:**
+- **Blake:** OK to publish these changes (commit and push to `main` deploys them).
+- **Event team:** confirm “Presented by” (D17), the volunteer segment naming (D14), and the “Paid for by” question (D15).
+
+**Next step (exact):** once Blake approves, `git add -A && git commit` (message: "Add run of show v1 and closing Congratulations page") and push. Wait for the Actions run to finish, then load https://program.stratforddemocrats.com on a phone and check the Program and closing sections. When run of show v2 arrives, follow “How to apply a new version” in `content/run-of-show.md`.
+
+---
+
 ## 2026-09-23 14:40 ET · Claude (Claude Code, Opus 5.5) · GitHub Pages set up, photo credit corrected, QR code generated
 
 **Did:**

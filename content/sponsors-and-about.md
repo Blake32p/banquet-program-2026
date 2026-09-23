@@ -16,11 +16,14 @@ Recommended treatment:
 
 ## About section content
 
-### Thank-you note (from the Canva draft, page 7; 2026 wording)
+### Closing page: “Congratulations!” + thank-you note (from the Canva program’s last page, 2026 wording)
+
+**Blake, 2026-09-23:** this page must be included basically as it is, as **the end of the program**. It's built as the final section `#congratulations` in `public/index.html`: the page's own vector art (`public/assets/img/congratulations.svg`, extracted from the PDF) on the same royal-blue gradient, with the message as live text. Keep it **last**, and keep the wording exactly as below.
+
 > Thank you, Anthony, Jill, and Corrie – for your dedication and commitment to the care, protection, and enhancement of our beloved town of Stratford.
 > — Karen and Kathleen
 
-- [ ] Confirm the wording and how Karen and Kathleen want to be credited (first names only, or full names and titles)
+- Wording and signature are used exactly as on the Canva page (first names only).
 
 ### About the Stratford Democratic Town Committee (from the Sept 10 press release boilerplate)
 > The Stratford Democratic Town Committee works to support Democratic candidates, encourage civic participation and promote Democratic values while helping elect leaders who serve the people of Stratford and Connecticut.

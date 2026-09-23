@@ -40,10 +40,10 @@ The fonts are self-hosted WOFF2 Latin subsets copied from the main site's `@font
 ## Layout
 
 - A single column, 40rem (640px) max, 44rem on tablets. The gutter is 18–32px and respects iPhone safe areas.
-- **Order:** Hero → Program → Honorees → Sponsors → About (with the PDF download) → Footer.
+- **Order:** Hero → Program → Honorees → Sponsors → About (with the PDF download) → **Closing page “Congratulations!”** → Footer. The closing page reproduces the last page of the Canva program and **must stay last** (Blake, 2026-09-23). It's full-bleed on phones and a rounded card on tablets. The art is `assets/img/congratulations.svg` (10.5 KB gzipped, lazy-loaded), and the text is `#b8e3f6` on the darker part of the gradient (7:1 or more). The About tab stays highlighted while it's on screen.
 - **Bottom tab bar:** fixed, 60px tall plus the safe area, four equal tabs. The active tab turns gold with a gold top bar, and about 1 KB of JavaScript (IntersectionObserver) tracks the section on screen. Without JS the links still work, just without highlighting.
 - **Honoree card:** circular 176px portrait with a gold ring, then the name, the award label, the first bio paragraph, and a **“Read full bio +”** control (`<details>`, no JS). On tablets (768px and up), the photo sits beside the text.
-- **Schedule:** a two-column grid (time | item). Below 352px it stacks. Award items link to the honoree's card.
+- **Schedule:** on phones (under 480px) the time sits above each segment; on tablets it is a two-column grid (time | item). Speakers’ names are bold and never split across lines. Award items link to the honoree’s card.
 - **Tap targets:** 48px or taller everywhere (pills, buttons, tabs).
 - **No horizontal scrolling,** verified at 320, 375, and 768 px on 2026-09-23. Long hyphenated names like “Folsom-O’Keefe” don't break at the hyphen.
 
