@@ -14,6 +14,15 @@
 
 ---
 
+## 2026-09-23 16:25 ET · Claude · Removed the top DRAFT banner; volunteer names are coming
+
+**Did:** At Blake's request, removed the “DRAFT v0” band at the top of the page (the element, its CSS, and the print rule). Blake says the **Volunteers of the Year names are coming**, so the `#volunteers` card and its jump pill stay. Updated D14, `content/honorees.md`, and docs 03 and 05. Published.
+**Checked:** Budget OK (first visit 115 KB). The live page no longer has the banner.
+**Still showing as draft notes on the page:** Volunteers of the Year and Sponsors (dashed placeholder boxes), and the About → Terry Backer blurb. Each goes away when its content arrives.
+**Next step (exact):** when the volunteer names arrive, replace the `.placeholder` inside `#volunteers` in `public/index.html` with one card per volunteer (same markup as `.honoree`, photo optional), using the names and citations saved in `content/honorees.md` first.
+
+---
+
 ## 2026-09-23 16:10 ET · Claude · Published run of show v1 + closing page
 
 **Did:** With Blake's OK, committed `c9abf45` and pushed. The Actions deploy run 35911503101 succeeded.

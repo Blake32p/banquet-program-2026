@@ -67,7 +67,8 @@ If the committee prefers the Canva design as the PDF: export it from Canva as **
 
 ## D. Launch (Saturday)
 
-- [ ] Delete `.draft-banner`, `.draft-note`, and their CSS
+- [x] Delete `.draft-banner` (done 2026-09-23 at Blake's request)
+- [ ] Delete each remaining `.draft-note` and `.placeholder` as its content arrives
 - [ ] Apply D9 (`noindex` or not)
 - [ ] Add og:image and og:url
 - [ ] Publish. Scan a **printed** table card and confirm it shows the final version.

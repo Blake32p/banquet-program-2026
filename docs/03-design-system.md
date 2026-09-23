@@ -22,7 +22,7 @@ What we deliberately **don't** do: animated sparkles, parallax, background video
 | `--sky` | `#8dd0e5` | Focus rings. It's the logo's “DEMOCRATS” color | 10.8:1 |
 | `--rule` | gold at 38% | Dividers and outlines | n/a |
 
-Draft-only colors (`.draft-banner` and `.draft-note`, in red) are deleted at launch.
+The draft-only color (`.draft-note`, in red) marks content still to come. The top “DRAFT” banner was removed on 2026-09-23.
 
 ## Type
 

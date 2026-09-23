@@ -48,9 +48,9 @@ In 2022, Corrie oversaw a salt marsh restoration project at the Great Meadows Ma
 
 ---
 
-## Volunteers of the Year — NEEDED
+## Volunteers of the Year — NAMES COMING (Blake, 2026-09-23)
 
-The flyer lists the award but no names. Last year the program gave each volunteer a named paragraph (“In recognition of…”).
+The flyer lists the award but no names. The names are on their way; add them to the `#volunteers` card in `public/index.html`. In run of show v1, this is the “Campaign Volunteer Recognition” segment, presented by Kathleen Callahan. Last year the program gave each volunteer a named paragraph (“In recognition of…”).
 
 - [ ] Names (exact spelling, including accents and hyphens)
 - [ ] One citation paragraph each (about 60–90 words)

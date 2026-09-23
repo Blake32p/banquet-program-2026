@@ -57,8 +57,7 @@ p{margin:0 0 1em}
 .nowrap{white-space:nowrap}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 
-/* Draft marker: delete this block and the .draft-banner element at launch */
-.draft-banner{margin:0;background:#5a1a1a;color:#fff;text-align:center;font-size:1rem;font-weight:700;padding:.5rem var(--gutter)}
+/* Draft notes for content still to come: delete each .draft-note once its content arrives */
 .draft-note{border:2px dashed #e08a8a;color:#ffd9d9;border-radius:12px;padding:.75rem 1rem;font-size:1rem;margin:0 0 1.5rem}
 
 /* Hero */
@@ -165,7 +164,7 @@ footer{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--rule);col
 @media print{
   :root{--bg:#fff;--bg-raised:#fff;--text:#111;--text-soft:#333;--gold:#7a5a12;--rule:#bbb}
   body{background:#fff;padding:0;font-size:12pt}
-  .tabbar,.skip,.draft-banner,.jump,summary{display:none}
+  .tabbar,.skip,.jump,summary{display:none}
   section{break-inside:auto;padding-block:1.5rem 0}
   .honoree{break-inside:avoid;border-color:#ccc}
   .finale{-webkit-print-color-adjust:exact;print-color-adjust:exact;break-before:page;break-inside:avoid;margin:0;border-radius:0}
@@ -176,7 +175,6 @@ footer{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--rule);col
 </head>
 <body>
 <a class="skip" href="#program">Skip to the program</a>
-<p class="draft-banner">DRAFT v0: not final. Placeholder content is marked.</p>
 
 <header class="hero wrap">
   <!-- Logo: public/assets/img/logo-light.svg, inlined to save a request. -->
