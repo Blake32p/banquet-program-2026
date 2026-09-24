@@ -14,6 +14,16 @@
 
 ---
 
+## 2026-09-24 13:07 ET · Claude · Added State Comptroller Sean Scanlon to Welcome remarks (local, not yet published)
+
+**Did:** Per Blake (chat), added “State Comptroller **Sean Scanlon**” after Secretary of the State Stephanie Thomas in Welcome remarks. Source first: `content/run-of-show.md` guest-facing table updated, and a “Changes since v1” note added (raw v1 text left as received). Then `public/index.html` `#program`: one new `.people` list item. Title: Blake first gave “Comptroller,” then chose the formal “State Comptroller.”
+**Checked:** :4173 at 375px: six Welcome remarks speakers in order, new line styled like the others, no horizontal overflow. Budget script OK (first visit 111,543 bytes; full page 231,833). `git diff --check` passes.
+**Decisions:** none.
+**Blocked on / waiting for:** Blake’s OK to publish.
+**Next step (exact):** On Blake’s OK, commit `content/run-of-show.md`, `public/index.html`, and this log; push to `main`; confirm the Pages run and that the live HTML matches.
+
+---
+
 ## 2026-09-24 12:56 ET · Claude · Ad book named “Tributes”; Blake’s decisions applied (still local, not published)
 
 **Did:** Renamed the section and third tab to **Tributes** (`id="tributes"`, `#tributes`, h2 “Tributes”). Intro: “Messages of congratulations from our friends and supporters. Tap one to see it full size.” (DRAFT COPY marker kept). Ad frames now use the card tint instead of white, so slow-loading ads don’t show as bright boxes. `scripts/check-budget.sh`: Tributes ads (`assets/img/ads/`) get a 45 KB per-ad cap and are reported separately from the 200 KB first-visit target; the full page must stay under the 300 KB hard cap. `.gitignore` now excludes `original-ad-images/`. Updated `AGENTS.md` (tab list, closing placement, ad budget, advertiser contact-detail exception, originals out of repo), D5, D15 (DECIDED: no “Paid for by”), D32 (ADOPTED), `docs/03-design-system.md`, `docs/01-project-brief.md`, and a pointer in `docs/06-redesign-plan.md`.
