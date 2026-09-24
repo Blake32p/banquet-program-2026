@@ -1,71 +1,84 @@
 # 03 · Design system and performance budget
 
-*Kickoff direction, 2026-09-23. The live values are the `:root` tokens in `public/index.html`. If you change one there, change it here too.*
+*Updated 2026-09-23 through D31. The redesign is published: `public/index.html` was ported from `docs/mockups/redesign-v1.html` on 2026-09-23 (D31). Make future design changes in `public/index.html`; the mockup is kept as a record.*
 
 ## Direction: “the invitation, on your phone”
 
 The page picks up the 2026 Save-the-Date flyer (`reference/2026-save-the-date-flyer.jpg`): a **deep navy** background, **gold** accents, a **script “Banquet,”** bold uppercase sans headings, and a few gold four-point sparkles. It uses the same logo as the website. The design is dark by default, and there's no light-mode toggle. On navy, a dark UI has less glare in a dim room, and it still reads in daylight because text contrast is 9.6–16.4:1.
 
-What we deliberately **don't** do: animated sparkles, parallax, background video, big hero photos, carousels, a hamburger menu, pop-ups, or cookie banners (there are no cookies).
+Avoid looping effects, parallax, background video, big hero photos, carousels, a hamburger menu, pop-ups, and cookie banners. D25 permits a brief opening ornament animation and useful control feedback; the motion rules below govern it.
 
 ## Color tokens
 
 | Token | Value | Use | Contrast on `--bg` |
 |---|---|---|---|
 | `--bg` | `#0a1230` | Page background (the flyer's navy) | n/a |
-| `--bg-raised` | `#111c45` | Honoree cards, buttons, panels | n/a |
-| `--bg-bar` | `#060b20` | Bottom navigation bar | n/a |
-| `--text` | `#f5f2ea` | Body text (warm white) | 16.4:1 AAA (14.7:1 on cards) |
-| `--text-soft` | `#c9cfe2` | Secondary text, schedule details | 11.8:1 AAA (10.6:1 on cards) |
-| `--gold` | `#ecc062` | Headings accents, times, links, active tab | 10.8:1 AAA (9.6:1 on cards) |
+| `--bg-top` | `#101b48` | Top of the page gradient | n/a |
+| `--bg-deep` | `#060b20` | Footer background and navigation bar | n/a |
+| `--text` | `#f5f2ea` | Body text and headings (warm white) | 16.4:1 AAA |
+| `--text-soft` | `#c9cfe2` | Secondary text, schedule details | 11.8:1 AAA |
+| `--gold` | `#ecc062` | Awards, times, links, active tab, script | 10.8:1 AAA |
 | `--gold-deep` | `#b8903a` | Portrait rings and rules only, **never text** | n/a |
 | `--sky` | `#8dd0e5` | Focus rings. It's the logo's “DEMOCRATS” color | 10.8:1 |
 | `--rule` | gold at 38% | Dividers and outlines | n/a |
+| `--rule-soft` | gold at 22% | Schedule separators and timeline | n/a |
+| `--frame` | gold at 50% | Honoree and roll borders | n/a |
 
-The draft-only color (`.draft-note`, in red) marks content still to come. The top “DRAFT” banner was removed on 2026-09-23.
+Honoree cards use a 2.5% white tint. Recheck contrast against the actual rendered background when changing colors. Remaining draft content is visibly labeled; neither the production draft banner nor the mockup’s design banner is required.
 
 ## Type
 
 | Role | Font | Size |
 |---|---|---|
 | Body | Poppins 400 | **19px** (1.1875rem), line-height 1.6 |
-| Headings, labels | Poppins 700 | Section titles 34–46px, honoree names 26–32px, schedule items 21px |
-| Script accent (“Banquet”, thank-you note) | Playfair Display 700 Italic (**stand-in**, see D4) | Scales with the h1 |
+| Headings, labels | Poppins 700 | Section titles 32–42px, honoree names 28–34px, schedule items 23px |
+| Script accent (“Banquet”, honoree roll, sign-off) | Allura 400 (D4, adopted) | Responsive; sign-off 48px; never synthesize bold |
 | Smallest text anywhere | n/a | 15px (photo credit, tab labels at 320px) |
 
-The fonts are self-hosted WOFF2 Latin subsets copied from the main site's `@fontsource` packages (SIL Open Font License). They use `font-display: swap`, so text appears immediately in the system font and switches when the brand font arrives.
+Poppins and Allura are self-hosted WOFF2 subsets under the SIL Open Font License. They use `font-display: swap`, so text appears immediately in the system font and switches when the brand font arrives.
 
-**D4 (open):** the flyer's script is a Canva font. Ask who made the flyer which font it is. If it's a Google font, we can use a WOFF2 subset of just the needed characters (≈10 KB). Or export “Banquet” from Canva as an SVG wordmark (≈3 KB, and it looks exactly like the flyer).
+**D4 (adopted):** Blake identified the flyer’s script as Allura. Its subset is `public/assets/fonts/allura-400.woff2`; source and license are in `source-assets/fonts/allura/`. The published page uses Allura; Playfair was removed (D31).
 
 ## Layout
 
 - A single column, 40rem (640px) max, 44rem on tablets. The gutter is 18–32px and respects iPhone safe areas.
-- **Order:** Hero → Program → Honorees → Sponsors → About (with the PDF download) → **Closing page “Congratulations!”** → Footer. The closing page reproduces the last page of the Canva program and **must stay last** (Blake, 2026-09-23). It's full-bleed on phones and a rounded card on tablets. The art is `assets/img/congratulations.svg` (10.5 KB gzipped, lazy-loaded), and the text is `#b8e3f6` on the darker part of the gradient (7:1 or more). The About tab stays highlighted while it's on screen.
-- **Bottom tab bar:** fixed, 60px tall plus the safe area, four equal tabs. The active tab turns gold with a gold top bar, and about 1 KB of JavaScript (IntersectionObserver) tracks the section on screen. Without JS the links still work, just without highlighting.
-- **Honoree card:** circular 176px portrait with a gold ring, then the name, the award label, the first bio paragraph, and a **“Read full bio +”** control (`<details>`, no JS). On tablets (768px and up), the photo sits beside the text.
-- **Schedule:** on phones (under 480px) the time sits above each segment; on tablets it is a two-column grid (time | item). Speakers’ names are bold and never split across lines. Award items link to the honoree’s card.
+- **Order:** Hero and honoree roll → Program → Honorees → **Congratulations and exact sign-off** → footer: **About → Stay connected → PDF availability → Stratford Democrats logo**. Congratulations remains the last ceremonial program section. Preserve its original SVG and wording. It uses navy, warm-white text, and a gold Allura sign-off (D18, adopted).
+- **Omitted:** Sponsors, an ad-book viewer, the extra Terry Backer award-background description, and footer email/phone details. Corrie’s award title and biography remain.
+- **Bottom tab bar:** fixed, 60px tall plus the safe area, three equal tabs: **Program | Honorees | About**. The active tab turns gold; About also covers the closing/footer area. A few lines of the page’s ~1.5 KB of JavaScript track the visible section. Without JS, links still work.
+- **Honoree card:** centered 160px portrait overlapping its frame, name, presenter, verbatim first bio paragraph, and native **“Read full bio”** disclosure. With JavaScript, opening a bio hides that control and a matching **“Show less”** button appears after the last paragraph, so the text reads without interruption; closing returns focus to “Read full bio” and centers it on screen. Without JavaScript, the native disclosure works as before (D29). Award labels sit above the relevant cards; Corrie’s photo credit remains below her portrait. Tablets keep the centered layout. Card side padding is 8px below 360px (D23), yielding 266px of biography width at 320px; text remains 19px.
+- **Schedule:** a vertical timeline with times above segments and simple separators between award entries. Speakers’ names are bold; award names link to the honoree’s card using at least 48px-high targets.
 - **Tap targets:** 48px or taller everywhere (pills, buttons, tabs).
 - **No horizontal scrolling,** verified at 320, 375, and 768 px on 2026-09-23. Long hyphenated names like “Folsom-O’Keefe” don't break at the hyphen.
+- **Outbound links:** Volunteer, email updates, Facebook, Instagram, and Website open in a new tab, with `rel="noopener noreferrer"` and a screen-reader notice. Section and honoree anchors stay in the current tab (D26).
+
+## Motion (D25, D30)
+
+- One opening sequence: existing gold stars glint and the date rule extends, finishing within 800ms.
+- Control feedback is brief: 140–200ms color/chevron transitions and a 180ms biography opacity transition. The 700ms honoree-target border highlight was removed (D30): it finished during the ~1.5s smooth scroll, before the card was on screen.
+- Tab bar: one 3px gold marker glides between tabs (320ms) instead of each tab drawing its own bar; built with `:has()`, no JavaScript. With reduced motion, the per-tab bar returns.
+- Scroll-linked ornament (CSS `animation-timeline`, no JavaScript): divider and award-title rules draw out from the center and the divider star turns as they enter; schedule dots glow as they cross the middle of the screen (a reading cue, not event status); portraits settle from 90% to full size as the gold ring closes; the closing art rises from 88% and brightens. Progress follows scroll position, so effects reverse when scrolling up. Wrapped in `@supports (animation-timeline:view())` and screen media; unsupported browsers (older iOS, Firefox) show the static page.
+- Animate only under `@media screen and (prefers-reduced-motion:no-preference)`. Smooth scrolling uses the same preference. Reduced-motion users get static decoration and immediate state feedback.
+- No loops, moving reading text, hidden content awaiting a reveal, added dependencies, or extra JavaScript for motion. Native disclosures and anchors remain usable without scripts. (The bio “Show less” control, D29, is the only JavaScript added since v0; it is not animation.)
 
 ## Performance budget
 
-| Item | Budget | Now (2026-09-23) |
-|---|---|---|
-| `index.html` gzipped | ≤ 14 KB (fits in the first round trip) | **11.7 KB** |
-| Fonts (3 files) | ≤ 45 KB | 38.9 KB |
-| Each portrait | ≤ 30 KB WebP 480×480 | 13.5 / 15.4 / 24.5 KB |
-| JavaScript | ≤ 2 KB, inline | ~0.7 KB |
-| **First visit total** | **≤ 200 KB target, 300 KB hard cap** | **104 KB** |
-| Third-party requests | **0** | 0 |
-| PDF (on tap only) | ≤ 1.5 MB, with its size shown on the button | not built yet |
+| Item | Budget |
+|---|---|
+| `index.html` gzipped | ≤ 14 KB (14,336 bytes) |
+| Fonts (3 files) | ≤ 45 KB |
+| Each portrait | ≤ 30 KB WebP, 480×480 |
+| JavaScript | ≤ 2 KB, inline |
+| **First visit total** | **≤ 200 KB target, 300 KB hard cap**, excluding the optional PDF |
+| Third-party asset requests | **0** |
+| PDF (on tap only) | ≤ 1.5 MB, with actual size shown beside its link |
 
-For comparison, last year's Canva PDF was **3.8 MB**, about 37× heavier than this whole page.
+The published redesign measures 10,590 bytes gzipped HTML and 110,853 bytes for the first visit (budget script, 2026-09-23). Its JavaScript is 1,469 bytes. The PDF has not been built.
 
 Techniques we use:
-- All CSS inline, the logo inline as SVG, and a favicon as a data URI. The first screen needs **only one request.**
+- Inline CSS and self-hosted assets. The header and footer reference the same logo SVG file, so the browser downloads it once. (Inlining it would leave only ~230 bytes under the HTML budget; D31.)
 - Photos use `loading="lazy"`, `decoding="async"`, and explicit `width`/`height` (no layout shift). They start downloading only as a guest scrolls toward them.
-- There's no web-font request before first paint (`swap`).
-- Sponsor ad images, if any, go behind a tap and are lazy-loaded (D6).
+- `font-display:swap` keeps text readable while local font files load.
+- No sponsor/ad image payload is part of the website (D6/D22).
 
 Run `bash scripts/check-budget.sh` after every change.
 
@@ -82,4 +95,4 @@ cwebp -q 70 -m 6 -sharp_yuv r.png -o public/assets/img/name.webp
 
 ## Print / PDF styles
 
-`@media print` switches to white paper and dark text, hides the tab bar, jump pills, and draft banner, and opens every “Read full bio” before printing. See `docs/05-launch-checklist.md` → “Build the PDF.”
+`@media print` switches to white paper and dark text and hides navigation/disclosure controls. The `beforeprint` handler expands biographies; check all are open when generating the PDF. Animation rules are screen-only. See `docs/05-launch-checklist.md` → “Build the PDF.”

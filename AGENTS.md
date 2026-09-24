@@ -26,10 +26,10 @@ A **digital-only program** for the Stratford Democratic Town Committee's 2026 An
 | Path | What it is | Published? |
 |---|---|---|
 | `public/` | **The website.** Everything in here is deployed as-is. | **Yes, all of it** |
-| `public/index.html` | The whole program: one page with inline CSS and about 1 KB of JS | Yes |
+| `public/index.html` | The whole program: one page with inline CSS and about 1.5 KB of JS (the 2026-09-23 redesign, ported from `docs/mockups/redesign-v1.html`) | Yes |
 | `public/assets/img/` | Compressed WebP images and the minified logo SVG | Yes |
-| `public/assets/fonts/` | Poppins 400/700 and Playfair Display 700 Italic, Latin subsets (SIL OFL) | Yes |
-| `content/` | **Source of truth for words.** Honoree bios, run of show, sponsors, About | No |
+| `public/assets/fonts/` | Poppins 400/700 and Allura 400 (the flyer’s script, ASCII subset). Playfair Display was removed with the redesign. All SIL OFL. | Yes |
+| `content/` | **Source of truth for words.** Honoree bios, run of show, About/footer; archived sponsor reference | No |
 | `content/private/` | Internal run-of-show notes and anything not for guests (gitignored) | No |
 | `docs/` | Brief, hosting research, design system, timeline, launch checklist, decisions, worklog | No |
 | `reference/` | The 2026 flyer and the Canva draft PDF (gitignored; may hold draft content) | No |
@@ -46,7 +46,7 @@ A **digital-only program** for the Stratford Democratic Town Committee's 2026 An
 - Bios are **verbatim** from `content/honorees.md`. Don't edit, shorten, or "improve" them. Copy changes go into `content/` first, then into the page.
 - Use real typography: curly apostrophes (’), en dashes for ranges (11 AM – 2 PM), and the exact name spellings: **D’Angelo-Powers, Folsom-O’Keefe, Afriyie**.
 - Credit Corrie’s photo: “Photo by Luke Franke.” (It is the caption on her photo on the event page.)
-- The **closing “Congratulations!” page** (from the last page of the Canva program) is the **end of the program**. Keep it last, and keep its text exactly as written.
+- The **closing “Congratulations!” page** (from the last page of the Canva program) is the **last program section**. Keep its text exactly as written. A separate footer follows **Karen and Kathleen’s sign-off**: **About → Stay connected → PDF availability → Stratford Democrats logo**. Omit the footer email address and phone number (D24). Omit the Sponsors section and the additional Terry Backer award-background block (D22); retain Corrie’s award title and biography.
 - The program schedule comes from the committee's run of show (`content/run-of-show.md`). Changes are expected, so apply each new version there first.
 
 **Speed** (guests may have weak cell service)
@@ -62,8 +62,9 @@ A **digital-only program** for the Stratford Democratic Town Committee's 2026 An
 - Body text ≥ 19px. Nothing smaller than 15px. Large headings.
 - Contrast is WCAG AAA (7:1) for body text on the navy background. Use the tokens in `:root` and don't add new colors ad hoc.
 - Tap targets ≥ 48px tall. No horizontal scrolling from 320px to 1024px wide.
-- Fixed bottom navigation: **Program | Honorees | Sponsors | About**. No hamburger menu.
-- Minimal motion. Smooth scrolling only when `prefers-reduced-motion` allows it. No animations.
+- Fixed bottom navigation: **Program | Honorees | About**. No hamburger menu. (Sponsors removed at Blake’s request, 2026-09-23.)
+- Open outbound website links in a new tab (`target="_blank"`, `rel="noopener noreferrer"`) and include a screen-reader notice. Keep in-program anchors in the current tab (Blake, D26).
+- Restrained motion (Blake’s explicit requests, D25 and D30): a brief opening ornament flourish, purposeful control feedback, a gliding tab marker, and CSS scroll-linked effects on ornaments only (divider rules, schedule dots, portrait medallions, the closing art) are allowed. Keep text immediately visible, avoid loops and moving reading content, and gate animations and smooth scrolling with `prefers-reduced-motion`. Scroll-linked effects sit behind `@supports (animation-timeline: view())` so unsupported browsers get the static page. Preserve native controls and full use without JavaScript.
 - Semantic HTML: headings in order, `<details>` for “Read full bio”, a skip link, and alt text on every photo.
 
 **Safety**

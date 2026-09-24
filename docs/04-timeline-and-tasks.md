@@ -12,28 +12,28 @@ Legend: 👤 owner (Blake) · 🏛️ committee (Kathleen/Karen/event team) · �
 - ✅ D1 approved: GitHub Pages + `program.stratforddemocrats.com`
 - ✅ Repo created and pushed, Pages turned on, first deploy passed, custom domain set (Claude)
 - ✅ QR code generated and decode-checked → `print/` (Claude)
-- 👤 **Add the Wix CNAME `program` → `blake32p.github.io` today**, so HTTPS is ready by Thursday
+- ✅ Wix CNAME `program` → `blake32p.github.io` configured (D1); retain the phone/cellular HTTPS check below
 - 🏛️ Send the content request (the email draft is below).
 
 ## Thu Sep 24: QR code locked, content integration (Codex)
 - 👤/🤖 Confirm `https://program.stratforddemocrats.com` loads over HTTPS on a phone using cellular data.
 - 👤 Test-scan `print/qr-program.svg` once the domain is live. Then send the table-card artwork to print.
-- 🤖 Put the run of show into `content/run-of-show.md` → `#program`, as soon as it arrives.
-- 🤖 Add Volunteers of the Year and the Terry Backer blurb when they arrive.
-- 🏛️ Review the v0 design on a phone. Collect feedback in one message.
-- 🏛️ Answer D4 (script font), D6 (ads), and D7 (PDF source).
+- 🤖 Integrate revisions to run-of-show v1 in `content/run-of-show.md`, then the page. Version 1 is already received.
+- 🤖 Add Volunteers of the Year when names and citations arrive. Sponsors and the extra Terry Backer blurb are omitted (D22).
+- 🏛️ Review `docs/mockups/redesign-v1.html` on a phone. Collect feedback in one message.
+- 🏛️ Resolve D7 (PDF source) and remaining content decisions. D4 is settled (Allura); D6 is settled (no website Sponsors).
 
-## Fri Sep 25: content lock (target 5 PM), PDF, full QA
-- 🤖 Sponsors section and ad handling (D6)
+## Fri Sep 25: PDF preparation and full QA
+- 👤/🤖 When Blake requests it, port the approved mockup to `public/index.html`, including D21–D26, then run the launch checks. Publication needs separate authorization.
 - 🤖 Build the PDF (doc 05) and label the button with its real size
 - 🤖 Add the og:image (the link preview when the program is texted)
 - 🤖/👤 Full QA checklist on a real iPhone and a real Android phone, including DevTools “Slow 4G”
 - 🏛️ Final proofread by the Chair: names, titles, times, and spelling
 - 👤 Pick up the printed table cards
 
-## Sat Sep 26: final
-- 🤖 Remove the draft banner and draft notes, and decide on `noindex` (D9)
-- 🤖 Publish the final version. Tag the release in git (`v1.0-event`).
+## Sat Sep 26: content lock and final release
+- 🤖 Resolve remaining draft notes and decide on `noindex` (D9). The top banner is already removed.
+- 🤖 With Blake’s authorization, publish the final version and tag the release in git (`v1.0-event`).
 - 👤 Scan a printed table card with 2–3 different phones
 - 👤 Print 10–15 backup copies of the PDF for the registration table (D13)
 
@@ -53,14 +53,10 @@ Legend: 👤 owner (Blake) · 🏛️ committee (Kathleen/Karen/event team) · �
 >
 > The digital program for Sunday's banquet is underway. Guests will scan a QR code on each table. So I can finish it, could you send the following by **Thursday midday**?
 >
-> 1. **Run of show** (the guest-facing version is fine: times, segments, and who is presenting)
+> 1. **Any updates to run-of-show version 1,** including times, award order, and confirmation of who is presenting
 > 2. **Volunteers of the Year:** names (exact spelling) and a short citation for each, plus photos if you'd like them included
 > 3. **Outstanding Volunteers list,** if we're doing one again this year
-> 4. **Sponsors and advertisers:** names, any tiers, and the ad artwork files
-> 5. **One or two sentences about Terry Backer and the award,** for the About section
-> 6. **Thank-you note:** is “Thank you, Anthony, Jill, and Corrie… — Karen and Kathleen” still the wording, and how would you like to sign it?
-> 7. Does the page need a **“Paid for by…” line**?
-> 8. The **name of the script font** used on the Save-the-Date flyer, if you know it
+> 4. Does the page need a **“Paid for by…” line**?
 >
 > Thanks!
 > Blake

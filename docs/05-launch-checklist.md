@@ -37,19 +37,22 @@ If the committee prefers the Canva design as the PDF: export it from Canva as **
 ## C. Pre-launch QA (Friday)
 
 **Content**
-- [ ] Every name is spelled exactly: Afriyie, D’Angelo-Powers, Folsom-O’Keefe, the Volunteers of the Year, and all sponsors
+- [ ] Every name is spelled exactly: Afriyie, D’Angelo-Powers, Folsom-O’Keefe, and the Volunteers of the Year
 - [ ] Times match the final run of show, and the award order matches the stage order
 - [ ] Bios match `content/honorees.md` word for word. The “Photo by Luke Franke” credit is under **Corrie’s** photo.
 - [ ] No `Draft:` notes, placeholder text, or `DRAFT COPY` comments remain, **or** each remaining one is approved
 - [ ] The “Paid for by…” decision is applied
-- [ ] Every link opens correctly: Volunteer, email updates, Facebook, Instagram, website, email, phone, and PDF
+- [ ] Sponsors and its navigation tab are absent. The extra Terry Backer award-background block is absent; Corrie’s award title and biography remain.
+- [ ] Closing note and exact sign-off precede the footer: About → Stay connected → PDF availability → Stratford Democrats logo. No footer email address or phone number.
+- [ ] Volunteer, email updates, Facebook, Instagram, and Website each open in a new tab while the program remains open; screen readers announce that behavior.
+- [ ] Program, Honorees, About, and honoree jumps stay in the current tab. The PDF link works once a real file is available.
 
 **Devices** (real phones, not just DevTools)
 - [ ] iPhone in Safari: tab bar clears the home indicator, “Read full bio” opens, the PDF opens
 - [ ] Android in Chrome: same checks
 - [ ] Tablet (iPad) portrait
 - [ ] System text size set to **Large** on both phones: nothing overlaps
-- [ ] 320px width in DevTools: no horizontal scrolling
+- [ ] 320, 375, 414, and 768px widths: no horizontal scrolling; biography padding is 8px below 360px with body text at least 19px
 
 **Speed**
 - [ ] `bash scripts/check-budget.sh` → OK
@@ -59,6 +62,9 @@ If the committee prefers the Canva design as the PDF: export it from Canva as **
 **Accessibility**
 - [ ] VoiceOver or TalkBack reads the headings in order, and the photos have alt text
 - [ ] Keyboard: the skip link works and focus rings are visible
+- [ ] Reduced motion: no decorative animation or smooth scrolling; control feedback and disclosures remain usable
+- [ ] With JavaScript disabled, section links and “Read full bio” still work and all content remains available
+- [ ] Normal motion: the opening flourish runs once, no loops, and no reading content waits to appear
 
 **Hosting**
 - [ ] `https://program.stratforddemocrats.com` loads over HTTPS in a private window, on cellular data
@@ -71,7 +77,7 @@ If the committee prefers the Canva design as the PDF: export it from Canva as **
 - [ ] Delete each remaining `.draft-note` and `.placeholder` as its content arrives
 - [ ] Apply D9 (`noindex` or not)
 - [ ] Add og:image and og:url
-- [ ] Publish. Scan a **printed** table card and confirm it shows the final version.
+- [ ] With Blake’s authorization, publish the ported production page. Scan a **printed** table card and confirm it shows the final version.
 - [ ] `git tag v1.0-event` (with the owner's OK)
 - [ ] Print 10–15 backup copies of the PDF (D13)
 

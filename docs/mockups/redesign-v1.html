@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>2026 Annual Awards Banquet Program · Stratford Democrats</title>
-<meta name="description" content="The digital program for the Stratford Democrats’ 2026 Annual Awards Banquet, Sunday, September 27, 2026, at Blackhawk Country Club.">
-<!-- DRAFT: remove noindex at launch only if the committee wants the program to be searchable (decision D9). -->
+<title>Redesign mockup v1 · 2026 Annual Awards Banquet Program</title>
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#0a1230">
 <meta name="color-scheme" content="dark">
-<meta property="og:type" content="website">
-<meta property="og:title" content="2026 Annual Awards Banquet Program">
-<meta property="og:description" content="Stratford Democrats · Sunday, September 27, 2026 · Blackhawk Country Club">
-<!-- TODO(launch): add og:image (1200×630 JPG ≤ 120 KB) and og:url once the final address is set. -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%230a1230'/%3E%3Cpath fill='%23e9bd5b' d='M12 3c.6 5 3 7.4 8 8-5 .6-7.4 3-8 8-.6-5-3-7.4-8-8 5-.6 7.4-3 8-8z'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#0a1230">
+<!--
+  DESIGN MOCKUP, NOT THE LIVE PAGE. See docs/06-redesign-plan.md.
+  - Fonts and images are referenced from public/assets so this file stays honest about weight.
+  - The script face is Allura, the flyer's font (D4), self-hosted as a 17 KB subset in public/assets/fonts/.
+  - The logo is an <img> here; the live page inlines it.
+  - Content is the current content of public/index.html (bios verbatim, run of show v1).
+-->
 <style>
-@font-face{font-family:Poppins;font-weight:400;font-display:swap;src:url(assets/fonts/poppins-400.woff2) format("woff2")}
-@font-face{font-family:Poppins;font-weight:700;font-display:swap;src:url(assets/fonts/poppins-700.woff2) format("woff2")}
-@font-face{font-family:Allura;font-weight:400;font-display:swap;src:url(assets/fonts/allura-400.woff2) format("woff2")}
+@font-face{font-family:Poppins;font-weight:400;font-display:swap;src:url(../../public/assets/fonts/poppins-400.woff2) format("woff2")}
+@font-face{font-family:Poppins;font-weight:700;font-display:swap;src:url(../../public/assets/fonts/poppins-700.woff2) format("woff2")}
+@font-face{font-family:Allura;font-weight:400;font-display:swap;src:url(../../public/assets/fonts/allura-400.woff2) format("woff2")}
 
 :root{
   --bg:#0a1230;          /* page navy (flyer) */
@@ -260,7 +260,7 @@ summary:active,.bio-less:active{color:var(--text)}
 <a class="skip" href="#program">Skip to the program</a>
 
 <header class="hero wrap">
-  <img class="logo" src="assets/img/logo-light.svg" width="304" height="61" alt="Stratford Democrats">
+  <img class="logo" src="../../public/assets/img/logo-light.svg" width="304" height="61" alt="Stratford Democrats">
   <h1>
     <svg class="sparkle a" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.8 7.2 4.8 11.2 12 12-7.2.8-11.2 4.8-12 12-.8-7.2-4.8-11.2-12-12 7.2-.8 11.2-4.8 12-12z"/></svg>
     <svg class="sparkle b" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.8 7.2 4.8 11.2 12 12-7.2.8-11.2 4.8-12 12-.8-7.2-4.8-11.2-12-12 7.2-.8 11.2-4.8 12-12z"/></svg>
@@ -335,7 +335,7 @@ summary:active,.bio-less:active{color:var(--text)}
     <h3 class="award-title">Democrats of the Year</h3>
 
     <article class="honoree" id="anthony" aria-labelledby="anthony-h">
-      <figure class="photo"><img class="portrait" src="assets/img/anthony.webp" width="480" height="480" alt="Anthony Afriyie" loading="lazy" decoding="async"></figure>
+      <figure class="photo"><img class="portrait" src="../../public/assets/img/anthony.webp" width="480" height="480" alt="Anthony Afriyie" loading="lazy" decoding="async"></figure>
       <h4 id="anthony-h">Anthony Afriyie</h4>
       <p class="by">Presented by State Senate Candidate Carolann&nbsp;Reid</p>
       <div class="bio">
@@ -349,7 +349,7 @@ summary:active,.bio-less:active{color:var(--text)}
     </article>
 
     <article class="honoree" id="jill" aria-labelledby="jill-h">
-      <figure class="photo"><img class="portrait" src="assets/img/jill.webp" width="480" height="480" alt="Jill D’Angelo-Powers" loading="lazy" decoding="async"></figure>
+      <figure class="photo"><img class="portrait" src="../../public/assets/img/jill.webp" width="480" height="480" alt="Jill D’Angelo-Powers" loading="lazy" decoding="async"></figure>
       <h4 id="jill-h">Jill <span class="nowrap">D’Angelo-Powers</span></h4>
       <p class="by">Presented by Stratford Democrats Political Director and Treasurer Karen&nbsp;Tracy</p>
       <div class="bio">
@@ -368,7 +368,7 @@ summary:active,.bio-less:active{color:var(--text)}
     <h3 class="award-title">Terry Backer Environmental Champion Award</h3>
 
     <article class="honoree" id="corrie" aria-labelledby="corrie-h">
-      <figure class="photo"><img class="portrait" src="assets/img/corrie.webp" width="480" height="480" alt="Corrie Folsom-O’Keefe" loading="lazy" decoding="async"><figcaption class="credit">Photo by Luke Franke</figcaption></figure>
+      <figure class="photo"><img class="portrait" src="../../public/assets/img/corrie.webp" width="480" height="480" alt="Corrie Folsom-O’Keefe" loading="lazy" decoding="async"><figcaption class="credit">Photo by Luke Franke</figcaption></figure>
       <h4 id="corrie-h">Corrie <span class="nowrap">Folsom-O’Keefe</span></h4>
       <p class="by">Presented by State Representative Joe&nbsp;Gresko</p>
       <div class="bio">
@@ -387,7 +387,7 @@ summary:active,.bio-less:active{color:var(--text)}
 
   <section id="congratulations" class="finale" aria-labelledby="congrats-h">
     <h2 id="congrats-h" class="sr-only">Congratulations!</h2>
-    <img class="finale-art" src="assets/img/congratulations.svg" width="516" height="500" alt="" loading="lazy" decoding="async">
+    <img class="finale-art" src="../../public/assets/img/congratulations.svg" width="516" height="500" alt="" loading="lazy" decoding="async">
     <p>Thank you, Anthony, Jill, and Corrie –</p>
     <p>for your dedication and commitment to the care, protection, and enhancement of our beloved town of Stratford.</p>
     <p class="sign">Karen and Kathleen</p>
@@ -413,7 +413,7 @@ summary:active,.bio-less:active{color:var(--text)}
   </ul>
   <!-- DRAFT COPY: needs committee approval. Restore the download link when the PDF exists. -->
   <p class="pdf">Download the program <span class="hint">Draft: PDF to come</span></p>
-  <img class="logo footer-logo" src="assets/img/logo-light.svg" width="304" height="61" alt="Stratford Democrats">
+  <img class="logo footer-logo" src="../../public/assets/img/logo-light.svg" width="304" height="61" alt="Stratford Democrats">
 </footer>
 
 <nav class="tabbar" aria-label="Program sections">

@@ -1,6 +1,6 @@
 # 01 · Project brief
 
-*Written 2026-09-23 at kickoff (Claude, acting as the design agency). Update it if goals or scope change.*
+*Written at kickoff; updated 2026-09-23 to reflect Blake’s decisions through D26. The latest design is in `docs/mockups/redesign-v1.html`; `public/index.html` remains the deployed version until a separately authorized port and publication.*
 
 ## The job
 
@@ -28,7 +28,7 @@ Replace the Canva PDF program with a **fast, phone-first web page** that guests 
 
 1. **Loads almost instantly on a weak connection.** First screen in under 2 s on “Slow 4G.” The whole page under 200 KB.
 2. **Easy to read:** body text 19px or larger, AAA contrast, and big tap targets.
-3. **Guests can find the schedule and the honorees in one tap,** from the fixed bottom bar: Program | Honorees | Sponsors | About.
+3. **Guests can find the schedule and the honorees in one tap,** from the fixed bottom bar: Program | Honorees | About.
 4. **Looks like the 2026 invitation** (navy, gold, and script) so it feels like part of the same event.
 5. **Easy to hand off between Claude and Codex, and between volunteers.** Plain files and a documented process.
 6. **A downloadable PDF keepsake,** clearly labeled with its size so nobody taps it by accident on weak signal.
@@ -38,6 +38,11 @@ Replace the Canva PDF program with a **fast, phone-first web page** that guests 
 - Ticketing, payments, donations, RSVP forms, live polling, and photo uploads
 - Logins or personalization
 - A CMS. Edits are made in plain HTML by an agent or a volunteer.
+- Sponsors/ad-book content on the website, and a separate Terry Backer award-background blurb (D22). Corrie’s award title and full biography remain.
+
+## Approved page structure
+
+Hero and honoree roll → Program → Honorees → Congratulations and Karen and Kathleen’s exact sign-off → footer with About, Stay connected, PDF availability, and the Stratford Democrats logo. The footer omits the email address and phone number. Outbound website links open in a new tab; internal navigation stays in the program (D22, D24, D26).
 
 ## Content inventory
 
@@ -46,15 +51,14 @@ Replace the Canva PDF program with a **fast, phone-first web page** that guests 
 | Event details | ✅ Have | Event page and flyer |
 | Honoree bios (Anthony, Jill, Corrie) | ✅ Have, verbatim | Event page → `content/honorees.md` |
 | Honoree photos | ✅ Have, compressed | Event page → `public/assets/img/` |
-| **Run of show** | ⏳ Coming | Event team → `content/run-of-show.md` |
+| **Run of show** | ✅ Version 1 received; revisions expected | Event team → `content/run-of-show.md` |
 | **Volunteers of the Year** (names and citations) | ❓ Needed | Committee |
 | Outstanding Volunteers list (last year had about 50) | ❓ Ask whether there is one | Committee |
-| **Sponsors / ad book** (names, tiers, artwork) | ❓ Needed | Committee, from the Anedot ad-book orders |
-| Thank-you note from Karen and Kathleen | ✅ Draft wording in the Canva file | Confirm the credit line |
-| About the Terry Backer award | ❓ Needed (1–2 approved sentences) | Chair |
+| Thank-you note from Karen and Kathleen | ✅ Keep exact approved wording and sign-off | Canva closing page; D16 |
 | “Paid for by” attribution line | ❓ Confirm whether it's needed | Chair / Treasurer |
 | Logo | ✅ Have | `Logos/stratford-democrats-light.svg` |
-| Script font used on the flyer | ❓ Name needed | Whoever made the flyer in Canva |
+| Script font used on the flyer | ✅ Allura 400, self-hosted subset (D4) | Confirmed by Blake |
+| PDF keepsake | ❓ Not built; source decision D7 pending | Owner / committee |
 
 ## What we learned from last year's program
 
