@@ -14,6 +14,16 @@
 
 ---
 
+## 2026-09-24 16:36 ET · Claude · Governor Lamont moved to last in Welcome remarks; full-page ad matches other ad widths (local, not yet published)
+
+**Did:** (1) Per Blake, Welcome remarks order is now Kathleen Callahan → Richard Blumenthal → Susan Bysiewicz → Stephanie Thomas → Sean Scanlon → **Ned Lamont** (last). `content/run-of-show.md` updated first (table + dated change note), then `public/index.html`. (2) Per Blake, Patti Moonan’s ad is a paid full-page ad, so it must be as wide as the other ads: removed the `.ad.tall` 22rem cap and its class. Updated the Tributes line in `docs/03-design-system.md`.
+**Checked:** :4173: speaker order correct at 375px; all four ads the same width at 375 (338px), 768, and 1024 (640px); ad 4 is 1013px tall at 640px wide; no horizontal overflow. Budget OK (first visit 111,525; full page 231,815). `git diff --check` passes. Note: ad 4’s source is only 653px wide, so it is slightly soft at 640 CSS px on 2x tablet/desktop screens and a little soft on 3x phones. Searched the project for a larger copy: none. `original-ad-images/` has only the 653×1034 PNG, and `reference/canva-program-draft-2025-template.pdf` has no image with the ad’s proportions. A higher-resolution export from Patti (≥1300px wide; ~2000px ideal) is needed, and could come with the corrected spelling. Do not upscale or recreate the artwork.
+**Decisions:** none new (layout detail under D32).
+**Blocked on / waiting for:** Blake’s OK to publish.
+**Next step (exact):** On Blake’s OK, commit `content/run-of-show.md`, `public/index.html`, `docs/03-design-system.md`, and this log; push to `main`; confirm the Pages run and that the live HTML matches.
+
+---
+
 ## 2026-09-24 13:07 ET · Claude · Added State Comptroller Sean Scanlon to Welcome remarks (local, not yet published)
 
 **Did:** Per Blake (chat), added “State Comptroller **Sean Scanlon**” after Secretary of the State Stephanie Thomas in Welcome remarks. Source first: `content/run-of-show.md` guest-facing table updated, and a “Changes since v1” note added (raw v1 text left as received). Then `public/index.html` `#program`: one new `.people` list item. Title: Blake first gave “Comptroller,” then chose the formal “State Comptroller.”
