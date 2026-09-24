@@ -8,3 +8,6 @@ content/private/
 # Local tool state
 .claude/settings.local.json
 node_modules/
+
+# Original ad artwork (full-size PNGs with contact details). Compressed copies live in public/assets/img/ads/ (D32).
+original-ad-images/

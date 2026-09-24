@@ -1,5 +1,7 @@
 # 06 · Redesign plan: “the invitation, continued”
 
+*Later change (2026-09-24, D32): a fourth tab and a **Tributes** section (the ad book) now sit between Honorees and the footer, with the closing page as its last ad. This plan otherwise records the redesign as published.*
+
 *Initial proposal by Claude, updated through Blake’s approved mockup refinements D21–D26 on 2026-09-23. Current design: `docs/mockups/redesign-v1.html`, served from the project root at `http://127.0.0.1:4174/docs/mockups/redesign-v1.html?v=4`. **Published to `public/index.html` on 2026-09-23 (D31)** at Blake’s request; D18 and D19 were adopted as built. D20 applies once the PDF exists.*
 
 ## The short version

@@ -46,7 +46,7 @@ A **digital-only program** for the Stratford Democratic Town Committee's 2026 An
 - Bios are **verbatim** from `content/honorees.md`. Don't edit, shorten, or "improve" them. Copy changes go into `content/` first, then into the page.
 - Use real typography: curly apostrophes (’), en dashes for ranges (11 AM – 2 PM), and the exact name spellings: **D’Angelo-Powers, Folsom-O’Keefe, Afriyie**.
 - Credit Corrie’s photo: “Photo by Luke Franke.” (It is the caption on her photo on the event page.)
-- The **closing “Congratulations!” page** (from the last page of the Canva program) is the **last program section**. Keep its text exactly as written. A separate footer follows **Karen and Kathleen’s sign-off**: **About → Stay connected → PDF availability → Stratford Democrats logo**. Omit the footer email address and phone number (D24). Omit the Sponsors section and the additional Terry Backer award-background block (D22); retain Corrie’s award title and biography.
+- The **closing “Congratulations!” page** (from the last page of the Canva program) is the **last ad in the Tributes section**, the program’s ad book (D32). Keep its text exactly as written. The other ads are the committee’s artwork from `original-ad-images/`, in their numbered order, as compressed WebP in `public/assets/img/ads/`, with alt text that transcribes each ad. A separate footer follows **Karen and Kathleen’s sign-off**: **About → Stay connected → PDF availability → Stratford Democrats logo**. Omit the footer email address and phone number (D24). Omit the additional Terry Backer award-background block (D22; the ad book, D32, replaces the old Sponsors idea); retain Corrie’s award title and biography.
 - The program schedule comes from the committee's run of show (`content/run-of-show.md`). Changes are expected, so apply each new version there first.
 
 **Speed** (guests may have weak cell service)
@@ -55,6 +55,7 @@ A **digital-only program** for the Stratford Democratic Town Committee's 2026 An
   - `index.html` ≤ **14 KB gzipped**, so it arrives in the first network round trip
   - Total first visit ≤ **200 KB** (hard cap 300 KB), not counting the optional PDF
   - Portrait photos: WebP, 480×480, ≤ 30 KB each, with `loading="lazy"`, `width`, and `height`
+  - Tributes ads: WebP, ≤ 45 KB each, lazy-loaded; counted separately from the first visit, and the full page stays under the 300 KB hard cap (D32)
   - JS ≤ 2 KB. The page must work fully with JS off.
 - Run `scripts/check-budget.sh` after any change to `public/`.
 
@@ -62,13 +63,13 @@ A **digital-only program** for the Stratford Democratic Town Committee's 2026 An
 - Body text ≥ 19px. Nothing smaller than 15px. Large headings.
 - Contrast is WCAG AAA (7:1) for body text on the navy background. Use the tokens in `:root` and don't add new colors ad hoc.
 - Tap targets ≥ 48px tall. No horizontal scrolling from 320px to 1024px wide.
-- Fixed bottom navigation: **Program | Honorees | About**. No hamburger menu. (Sponsors removed at Blake’s request, 2026-09-23.)
+- Fixed bottom navigation: **Program | Honorees | Tributes | About** (D32). No hamburger menu. Tab labels must fit an 80px tab at 320px wide in 15px bold Poppins (about 78px of text).
 - Open outbound website links in a new tab (`target="_blank"`, `rel="noopener noreferrer"`) and include a screen-reader notice. Keep in-program anchors in the current tab (Blake, D26).
 - Restrained motion (Blake’s explicit requests, D25 and D30): a brief opening ornament flourish, purposeful control feedback, a gliding tab marker, and CSS scroll-linked effects on ornaments only (divider rules, schedule dots, portrait medallions, the closing art) are allowed. Keep text immediately visible, avoid loops and moving reading content, and gate animations and smooth scrolling with `prefers-reduced-motion`. Scroll-linked effects sit behind `@supports (animation-timeline: view())` so unsupported browsers get the static page. Preserve native controls and full use without JavaScript.
 - Semantic HTML: headings in order, `<details>` for “Read full bio”, a skip link, and alt text on every photo.
 
 **Safety**
-- Don't put internal run-of-show notes, phone numbers of individuals, or anything from `content/private/` into `public/`.
+- Don't put internal run-of-show notes, phone numbers of individuals, or anything from `content/private/` into `public/`. Exception: contact details that an advertiser printed in their own Tributes ad are published as supplied (Blake, D32). Keep `original-ad-images/` out of the repo (it is gitignored).
 - Don't commit or push unless the owner asks. The GitHub repo will be **public**, so check `git status` before any commit.
 - Deploying, changing DNS, and anything else outward-facing needs the owner’s OK in the chat.
 

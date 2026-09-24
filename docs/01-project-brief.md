@@ -28,7 +28,7 @@ Replace the Canva PDF program with a **fast, phone-first web page** that guests 
 
 1. **Loads almost instantly on a weak connection.** First screen in under 2 s on “Slow 4G.” The whole page under 200 KB.
 2. **Easy to read:** body text 19px or larger, AAA contrast, and big tap targets.
-3. **Guests can find the schedule and the honorees in one tap,** from the fixed bottom bar: Program | Honorees | About.
+3. **Guests can find the schedule and the honorees in one tap,** from the fixed bottom bar: Program | Honorees | Tributes | About.
 4. **Looks like the 2026 invitation** (navy, gold, and script) so it feels like part of the same event.
 5. **Easy to hand off between Claude and Codex, and between volunteers.** Plain files and a documented process.
 6. **A downloadable PDF keepsake,** clearly labeled with its size so nobody taps it by accident on weak signal.

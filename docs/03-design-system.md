@@ -42,9 +42,10 @@ Poppins and Allura are self-hosted WOFF2 subsets under the SIL Open Font License
 ## Layout
 
 - A single column, 40rem (640px) max, 44rem on tablets. The gutter is 18–32px and respects iPhone safe areas.
-- **Order:** Hero and honoree roll → Program → Honorees → **Congratulations and exact sign-off** → footer: **About → Stay connected → PDF availability → Stratford Democrats logo**. Congratulations remains the last ceremonial program section. Preserve its original SVG and wording. It uses navy, warm-white text, and a gold Allura sign-off (D18, adopted).
-- **Omitted:** Sponsors, an ad-book viewer, the extra Terry Backer award-background description, and footer email/phone details. Corrie’s award title and biography remain.
-- **Bottom tab bar:** fixed, 60px tall plus the safe area, three equal tabs: **Program | Honorees | About**. The active tab turns gold; About also covers the closing/footer area. A few lines of the page’s ~1.5 KB of JavaScript track the visible section. Without JS, links still work.
+- **Order:** Hero and honoree roll → Program → Honorees → **Tributes** (the ad book: supplied ads, then the Congratulations page and exact sign-off as the last ad, D32) → footer: **About → Stay connected → PDF availability → Stratford Democrats logo**. Congratulations remains the last ceremonial program section. Preserve its original SVG and wording. It uses navy, warm-white text, and a gold Allura sign-off (D18, adopted).
+- **Tributes (D32):** ads stack full width in 1px gold-edged frames (portrait ads capped at 22rem), each linking to its own image full size in a new tab. Alt text transcribes each ad.
+- **Omitted:** a Sponsors tier layout, the extra Terry Backer award-background description, and footer email/phone details. Corrie’s award title and biography remain.
+- **Bottom tab bar:** fixed, 60px tall plus the safe area, four equal tabs: **Program | Honorees | Tributes | About** (D32). The active tab turns gold; Tributes covers the ads and the closing, and About covers the footer. Labels must fit ~78px at 15px bold (320px screens). A few lines of the page’s ~1.5 KB of JavaScript track the visible section. Without JS, links still work.
 - **Honoree card:** centered 160px portrait overlapping its frame, name, presenter, verbatim first bio paragraph, and native **“Read full bio”** disclosure. With JavaScript, opening a bio hides that control and a matching **“Show less”** button appears after the last paragraph, so the text reads without interruption; closing returns focus to “Read full bio” and centers it on screen. Without JavaScript, the native disclosure works as before (D29). Award labels sit above the relevant cards; Corrie’s photo credit remains below her portrait. Tablets keep the centered layout. Card side padding is 8px below 360px (D23), yielding 266px of biography width at 320px; text remains 19px.
 - **Schedule:** a vertical timeline with times above segments and simple separators between award entries. Speakers’ names are bold; award names link to the honoree’s card using at least 48px-high targets.
 - **Tap targets:** 48px or taller everywhere (pills, buttons, tabs).
@@ -67,8 +68,10 @@ Poppins and Allura are self-hosted WOFF2 subsets under the SIL Open Font License
 | `index.html` gzipped | ≤ 14 KB (14,336 bytes) |
 | Fonts (3 files) | ≤ 45 KB |
 | Each portrait | ≤ 30 KB WebP, 480×480 |
+| Each Tributes ad | ≤ 45 KB WebP, lazy-loaded; counted separately (D32) |
 | JavaScript | ≤ 2 KB, inline |
-| **First visit total** | **≤ 200 KB target, 300 KB hard cap**, excluding the optional PDF |
+| **First visit total** | **≤ 200 KB target**, excluding Tributes ads and the optional PDF |
+| **Full page** | **≤ 300 KB hard cap**, Tributes ads included |
 | Third-party asset requests | **0** |
 | PDF (on tap only) | ≤ 1.5 MB, with actual size shown beside its link |
 

@@ -159,6 +159,12 @@ details.enh[open]>summary{display:none}
 .pdf .hint{display:block;color:var(--text-soft);font-weight:400;white-space:nowrap}
 
 /* Closing page: Karen and Kathleen's note, on the page navy (D16) */
+/* Tributes, the ad book (D32): supplied ad artwork in the committee's order; Karen and Kathleen's closing is the last ad. */
+.ads{list-style:none;margin:1.75rem 0 0;padding:0;display:grid;gap:1.5rem}
+.ad{display:block;border-radius:10px;overflow:hidden;background:rgba(255,255,255,.025);box-shadow:0 0 0 1px var(--frame)}
+.ad img{width:100%}
+.ad.tall{max-width:22rem;margin-inline:auto}
+.ads .finale{margin-top:.5rem}
 .finale{margin:3rem calc(-1 * var(--gutter)) 0;padding:2.5rem var(--gutter) 2.5rem;text-align:center;
   background:radial-gradient(closest-side at 50% 36%,rgba(64,92,196,.55),rgba(64,92,196,0));scroll-margin-top:1rem}
 /* closest-side: the glow fades to nothing at the nearest top and side edges, so the section never shows a hard edge. */
@@ -203,10 +209,11 @@ summary:active,.bio-less:active{color:var(--text)}
   /* One gold tab marker glides to the active tab (D30). Reduced motion keeps the per-tab bar above. */
   .tabbar ul{position:relative}
   .tabbar a[aria-current="true"]{box-shadow:none}
-  .tabbar ul::after{content:"";position:absolute;top:0;left:env(safe-area-inset-left);width:calc((100% - env(safe-area-inset-left) - env(safe-area-inset-right))/3);height:3px;background:var(--gold);opacity:0;transition:transform 320ms var(--motion-ease),opacity 200ms ease-out}
+  .tabbar ul::after{content:"";position:absolute;top:0;left:env(safe-area-inset-left);width:calc((100% - env(safe-area-inset-left) - env(safe-area-inset-right))/4);height:3px;background:var(--gold);opacity:0;transition:transform 320ms var(--motion-ease),opacity 200ms ease-out}
   .tabbar ul:has(a[aria-current="true"])::after{opacity:1}
   .tabbar ul:has(li:nth-child(2) a[aria-current="true"])::after{transform:translateX(100%)}
   .tabbar ul:has(li:nth-child(3) a[aria-current="true"])::after{transform:translateX(200%)}
+  .tabbar ul:has(li:nth-child(4) a[aria-current="true"])::after{transform:translateX(300%)}
   @keyframes gold-glint{
     0%{opacity:.65;transform:scale(.85) rotate(-12deg)}
     45%{opacity:1;transform:scale(1.12) rotate(4deg)}
@@ -251,7 +258,8 @@ summary:active,.bio-less:active{color:var(--text)}
   body{background:#fff;padding:0;font-size:12pt}
   .tabbar,.skip,.roll,summary,.bio-less{display:none}
   section{padding-block:1.5rem 0}
-  .honoree{break-inside:avoid}
+  .honoree,.ads>li{break-inside:avoid}
+  .ad{box-shadow:0 0 0 1px #bbb}
   .finale{break-before:page;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style>
@@ -385,12 +393,27 @@ summary:active,.bio-less:active{color:var(--text)}
     <div class="placeholder">Draft: honoree names and citations needed. See <code>content/honorees.md</code>.</div>
   </section>
 
-  <section id="congratulations" class="finale" aria-labelledby="congrats-h">
-    <h2 id="congrats-h" class="sr-only">Congratulations!</h2>
-    <img class="finale-art" src="assets/img/congratulations.svg" width="516" height="500" alt="" loading="lazy" decoding="async">
-    <p>Thank you, Anthony, Jill, and Corrie –</p>
-    <p>for your dedication and commitment to the care, protection, and enhancement of our beloved town of Stratford.</p>
-    <p class="sign">Karen and Kathleen</p>
+  <!-- Tributes: the ad book (D32). Ads in the committee’s numbered order; Karen and Kathleen’s closing is the last one. -->
+  <section id="tributes" aria-labelledby="tributes-h">
+    <div class="orn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 0c.8 7.2 4.8 11.2 12 12-7.2.8-11.2 4.8-12 12-.8-7.2-4.8-11.2-12-12 7.2-.8 11.2-4.8 12-12z"/></svg></div>
+    <h2 id="tributes-h">Tributes</h2>
+    <!-- DRAFT COPY: needs committee approval -->
+    <p class="lede">Messages of congratulations from our friends and supporters. Tap one to see it full size.</p>
+    <ol class="ads">
+      <li><a class="ad" href="assets/img/ads/ad-1.webp" target="_blank" rel="noopener noreferrer"><img src="assets/img/ads/ad-1.webp" width="1000" height="647" alt="Ad: Democrat of the Year Jill D’Angelo-Powers. Congratulations! Thank you for your leadership! You advocate for children, chair meetings, and cut turf with intelligence and grace! Blue and white balloons and a photo of two people." loading="lazy" decoding="async"><span class="sr-only"> (opens full size in a new tab)</span></a></li>
+      <li><a class="ad" href="assets/img/ads/ad-2.webp" target="_blank" rel="noopener noreferrer"><img src="assets/img/ads/ad-2.webp" width="1000" height="729" alt="Ad: Re-elect Joe Gresko, Democrat, State Representative. Congratulations award winners." loading="lazy" decoding="async"><span class="sr-only"> (opens full size in a new tab)</span></a></li>
+      <li><a class="ad" href="assets/img/ads/ad-3.webp" target="_blank" rel="noopener noreferrer"><img src="assets/img/ads/ad-3.webp" width="1000" height="753" alt="Ad: business card. Monica J. Peterson, Professional Storyteller &amp; Educator. (203) 641-3152. MonicaPeterson12345@gmail.com. monicajpeterson.com." loading="lazy" decoding="async"><span class="sr-only"> (opens full size in a new tab)</span></a></li>
+      <li><a class="ad tall" href="assets/img/ads/ad-4.webp" target="_blank" rel="noopener noreferrer"><img src="assets/img/ads/ad-4.webp" width="653" height="1034" alt="Ad: Wishing Carol Ann Reid and Mandy Kilmartin the best of luck on November 3rd! Let’s go ladies!!!! Patti Moonan, MA, LMFT." loading="lazy" decoding="async"><span class="sr-only"> (opens full size in a new tab)</span></a></li>
+      <li>
+        <section id="congratulations" class="finale" aria-labelledby="congrats-h">
+          <h3 id="congrats-h" class="sr-only">Congratulations!</h3>
+          <img class="finale-art" src="assets/img/congratulations.svg" width="516" height="500" alt="" loading="lazy" decoding="async">
+          <p>Thank you, Anthony, Jill, and Corrie –</p>
+          <p>for your dedication and commitment to the care, protection, and enhancement of our beloved town of Stratford.</p>
+          <p class="sign">Karen and Kathleen</p>
+        </section>
+      </li>
+    </ol>
   </section>
 </main>
 
@@ -420,6 +443,7 @@ summary:active,.bio-less:active{color:var(--text)}
   <ul>
     <li><a href="#program">Program</a></li>
     <li><a href="#honorees">Honorees</a></li>
+    <li><a href="#tributes">Tributes</a></li>
     <li><a href="#about">About</a></li>
   </ul>
 </nav>
@@ -440,7 +464,7 @@ summary:active,.bio-less:active{color:var(--text)}
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)mark(e.target.id)})},{rootMargin:'-40% 0px -55% 0px'});
     Object.keys(byId).forEach(function(id){var s=document.getElementById(id);if(s)io.observe(s)});
-    ['congratulations','contact'].forEach(function(id){var s=document.getElementById(id);if(s){byId[id]=byId.about;io.observe(s)}});
+    ['contact'].forEach(function(id){var s=document.getElementById(id);if(s){byId[id]=byId.about;io.observe(s)}});
   }
   addEventListener('beforeprint',function(){[].forEach.call(document.querySelectorAll('details'),function(d){d.open=true})});
 })();

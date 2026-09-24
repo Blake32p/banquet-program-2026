@@ -14,6 +14,26 @@
 
 ---
 
+## 2026-09-24 12:56 ET · Claude · Ad book named “Tributes”; Blake’s decisions applied (still local, not published)
+
+**Did:** Renamed the section and third tab to **Tributes** (`id="tributes"`, `#tributes`, h2 “Tributes”). Intro: “Messages of congratulations from our friends and supporters. Tap one to see it full size.” (DRAFT COPY marker kept). Ad frames now use the card tint instead of white, so slow-loading ads don’t show as bright boxes. `scripts/check-budget.sh`: Tributes ads (`assets/img/ads/`) get a 45 KB per-ad cap and are reported separately from the 200 KB first-visit target; the full page must stay under the 300 KB hard cap. `.gitignore` now excludes `original-ad-images/`. Updated `AGENTS.md` (tab list, closing placement, ad budget, advertiser contact-detail exception, originals out of repo), D5, D15 (DECIDED: no “Paid for by”), D32 (ADOPTED), `docs/03-design-system.md`, `docs/01-project-brief.md`, and a pointer in `docs/06-redesign-plan.md`.
+**Checked:** :4173 at 320px: heading, intro, and tab read “Tributes” (64px text in an 80px tab); 5 items with the closing last; the Tributes tab and marker activate; all four ads load; no horizontal overflow, no console errors, no failed requests. Budget script OK: first visit 111,523 bytes; Tributes ads 120,290; full page 231,813 of 307,200. `git diff --check` passes. Nothing committed or pushed.
+**Decisions (Blake, in chat):** name “Tributes”; Monica J. Peterson’s card published as is; page weight accepted; no “Paid for by” line; Patti Moonan’s “Carol Ann Reid” spelling left as supplied (a corrected ad may replace it; swap `ad-4.webp` and its alt text); originals stay out of the repo.
+**Blocked on / waiting for:** Blake’s OK to publish (commit + push to `main`).
+**Next step (exact):** On Blake’s OK, commit `public/` (index.html + `assets/img/ads/`), `scripts/check-budget.sh`, `.gitignore`, and the docs; push to `main`; watch the Pages run; confirm the live HTML matches and the ads return 200.
+
+---
+
+## 2026-09-24 12:51 ET · Claude · Ad book section and fourth tab built locally (not published; name pending)
+
+**Did:** Per Blake, added an ad book to `public/index.html` (the live source; mockup is a record). New `<section id="adbook">` between Honorees and the footer: divider, placeholder heading “Ad book,” draft intro line, and an ordered list of the four ads from `original-ad-images/` (numbered order), then Karen and Kathleen’s closing moved inside as the fifth and last item (its heading is now an sr-only h3; `id="congratulations"` kept). Each ad is a link to its own image (new tab, sr-only notice) with alt text transcribing the ad. Ads compressed with `cwebp` into `public/assets/img/ads/ad-1…4.webp` (1000px wide; ad 4 native 653px): 32,378 / 23,912 / 23,122 / 40,878 bytes. Ad 2 cropped to remove print crop marks and a timestamp; ad 3 trimmed to its outer border; ad 4 flattened onto white. No ad content altered. Tab bar now Program | Honorees | Ad book | About; the gliding marker is ¼ width with a 4th position; the JS no longer maps the closing to About (the ad book section covers it). Print: ads avoid page breaks. Updated `AGENTS.md` (closing placement, tab list, 78px label limit) and D32 (IN PROGRESS).
+**Checked:** Local server :4173 at 375px: ads render in order in gold-edged frames, the closing follows as the last ad, the “Ad book” tab highlights through the ads and closing, 24 scroll-linked effects attach (3 new dividers), ad links return 200. At 320px: four tabs fit (text 47–73px in 80px tabs; “Program” and “Honorees” sit close), no horizontal overflow. **Budget script FAILS:** ads 1 and 4 exceed the 30 KB photo cap and the total is 231,806 bytes vs. the 204,800 target (hard cap 307,200 not exceeded). HTML is 11,253 bytes gzipped. `git diff --check` passes. Nothing committed or pushed.
+**Decisions:** D32 recorded as IN PROGRESS.
+**Blocked on / waiting for:** Blake: section/tab name (brainstorm in chat); OK to publish Monica J. Peterson’s phone and email (her ad; conflicts with the AGENTS.md phone rule); budget treatment for ad images; “Paid for by” for the Gresko and Moonan ads (D15); “Carol Ann Reid” (ad) vs. “Carolann Reid” (program); whether to commit `original-ad-images/` to the public repo.
+**Next step (exact):** Apply Blake’s chosen name in the `<h2 id="adbook-h">` and the third tab label (keep it ≤ ~78px at 15px bold). Resolve the budget question (update `scripts/check-budget.sh` or recompress), then commit and publish only with Blake’s OK.
+
+---
+
 ## 2026-09-23 21:30 ET · Claude · Published the redesign: mockup ported to `public/index.html` (D31)
 
 **Did:** At Blake’s request (“merge this to main and make it the live version”), replaced `public/index.html` with the approved mockup: the live page’s `<head>` (title, description, OG tags, data-URI favicon, `noindex` per D9) + the mockup’s CSS/body/JS with `../../public/assets/` → `assets/`. Logo kept as `<img>` in header and footer (one cached file); inlining it would put HTML at 14,106 of 14,336 bytes. `git rm` of the now-unreferenced `public/assets/fonts/playfair-700-italic.woff2`. D18 and D19 marked adopted; D31 recorded. Updated `AGENTS.md` folder map, `docs/03-design-system.md`, and `docs/06-redesign-plan.md` so they describe the published page. Pre-port copy of the old page saved in the session scratchpad (also recoverable from git: `ffa60f5:public/index.html`).
@@ -21,7 +41,8 @@
 **Decisions:** D31 adopted; D18, D19 adopted (published). D20 still applies once the PDF exists.
 **Blocked on / waiting for:** Guest-visible draft items still to resolve before the Sat lock: Volunteers placeholder (shows `content/honorees.md`), “Draft: PDF to come,” “Presented by” confirmation (D17), “Paid for by” (D15), unmarked Honorees intro line.
 **Deployed:** Committed as `a721c89` “Publish the program redesign” and pushed to `main` with Blake’s OK. Pages run 35943260739 succeeded at 21:31 ET. `https://program.stratforddemocrats.com` returns HTTP 200 with HTML byte-identical to `public/index.html`; the Allura font, logo, closing art, and a portrait each return 200. In the browser at 375px: no console errors, fonts loaded, logo loaded, 21 scroll-linked effects attached; a fresh visit opens at the top. Guests with the old page open may see it for up to 10 minutes (`max-age=600`).
-**Next step (exact):** Scroll https://program.stratforddemocrats.com on an iPhone (down and back up, open and close a bio). Then resolve the guest-visible draft items listed above before the Sat content lock, editing `public/index.html` directly (the mockup is now a record).
+**iPhone check (22:09):** Blake tested the live site on an iPhone and reports it works well. This closes the open real-device check for D29 and D30.
+**Next step (exact):** Resolve the guest-visible draft items listed above before the Sat content lock, editing `public/index.html` directly (the mockup is now a record).
 
 ---
 
