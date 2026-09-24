@@ -19,8 +19,9 @@
 **Did:** Per Blake (chat), added “State Comptroller **Sean Scanlon**” after Secretary of the State Stephanie Thomas in Welcome remarks. Source first: `content/run-of-show.md` guest-facing table updated, and a “Changes since v1” note added (raw v1 text left as received). Then `public/index.html` `#program`: one new `.people` list item. Title: Blake first gave “Comptroller,” then chose the formal “State Comptroller.”
 **Checked:** :4173 at 375px: six Welcome remarks speakers in order, new line styled like the others, no horizontal overflow. Budget script OK (first visit 111,543 bytes; full page 231,833). `git diff --check` passes.
 **Decisions:** none.
-**Blocked on / waiting for:** Blake’s OK to publish.
-**Next step (exact):** On Blake’s OK, commit `content/run-of-show.md`, `public/index.html`, and this log; push to `main`; confirm the Pages run and that the live HTML matches.
+**Published (13:12 ET):** With Blake’s OK, committed `e036c1e` and pushed to `main`; Pages run 36032629538 succeeded. The live HTML is byte-identical to `public/index.html` and contains the new line.
+**Blocked on / waiting for:** none.
+**Next step (exact):** Remaining guest-visible draft items before the Sat lock: Volunteers of the Year placeholder, “Draft: PDF to come,” “Presented by” confirmation (D17), the Honorees and Tributes intro lines (agent copy awaiting approval).
 
 ---
 
