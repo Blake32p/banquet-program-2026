@@ -20,8 +20,9 @@
 **Checked:** :4173 at 375px: speaker order correct; roll and Honorees list only Democrats of the Year and the Terry Backer award; Corrie’s card ends Honorees with the same 60px gap to the Tributes divider as Program → Honorees; no broken in-page anchors, no console errors, no horizontal overflow. Budget OK (HTML 11,127 bytes gzipped; first visit 111,390; full page 231,680). `git diff --check` passes.
 **Decisions:** D14 decided (not at this event); D19 wording updated.
 **Also checked:** Awards now lists Opening remarks → Terry Backer → Stratford Democrat of the Year ×2; the first item has no top rule; no horizontal overflow.
-**Blocked on / waiting for:** Blake’s OK to publish.
-**Next step (exact):** On Blake’s OK, commit the changed files and this log; push to `main`; confirm the Pages run and that the live HTML matches.
+**Published (16:26 ET):** With Blake’s OK, committed `71967ce` and pushed to `main`; Pages run 36185736926 succeeded. The live HTML is byte-identical to `public/index.html`: speaker order ends Blumenthal → Lamont, and neither “Volunteers of the Year” nor “Campaign Volunteer Recognition” appears.
+**Blocked on / waiting for:** a higher-resolution (and possibly corrected) ad from Patti Moonan.
+**Next step (exact):** Remaining draft items before the Sat lock: “Draft: PDF to come,” “Presented by” confirmation (D17), and the Honorees and Tributes intro lines (agent copy awaiting approval).
 
 ---
 
