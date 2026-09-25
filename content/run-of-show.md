@@ -21,10 +21,9 @@ Guest-facing style rules:
 | Time | Segment | Speakers / details |
 |---|---|---|
 | 11:00 AM | Arrival | Coffee, tea & cocktails |
-| 11:20 AM | Welcome remarks | Stratford Democrats Chair **Kathleen Callahan** · Senator **Richard Blumenthal** · Lieutenant Governor **Susan Bysiewicz** · Secretary of the State **Stephanie Thomas** · State Comptroller **Sean Scanlon** · Governor **Ned Lamont** |
+| 11:20 AM | Welcome remarks | Stratford Democrats Chair **Kathleen Callahan** · Lieutenant Governor **Susan Bysiewicz** · Secretary of the State **Stephanie Thomas** · State Comptroller **Sean Scanlon** · Senator **Richard Blumenthal** · Governor **Ned Lamont** |
 | 12:00 PM | Brunch | |
 | 1:00 PM | Awards | Opening remarks: Stratford Mayor **David Chess** |
-| | | Campaign Volunteer Recognition: **Kathleen Callahan** |
 | | | Terry Backer Environmental Champion: **Corrie Folsom-O’Keefe**, presented by State Representative **Joe Gresko** |
 | | | Stratford Democrat of the Year: **Anthony Afriyie**, presented by State Senate Candidate **Carolann Reid** |
 | | | Stratford Democrat of the Year: **Jill D’Angelo-Powers**, presented by Stratford Democrats Political Director and Treasurer **Karen Tracy** |
@@ -33,12 +32,14 @@ Guest-facing style rules:
 ### Changes since v1
 - **2026-09-24 (Blake, in chat):** add State Comptroller **Sean Scanlon** to Welcome remarks, after Secretary of the State Stephanie Thomas (Blake chose the formal title).
 - **2026-09-24 (Blake, in chat):** move Governor **Ned Lamont** to the end of Welcome remarks, after State Comptroller Sean Scanlon.
+- **2026-09-25 (Blake, in chat):** move Senator **Richard Blumenthal** to just before Governor Ned Lamont (Lamont remains last).
+- **2026-09-25 (Blake, in chat):** remove the “Campaign Volunteer Recognition” segment (Kathleen Callahan) from the Awards; volunteers are not recognized at this event (D14).
 - The raw v1 text below is unchanged.
 
 ### Editorial notes on v1 (confirm with the event team)
 - **Spelling:** the run of show says “Anthony Afiyie.” The correct spelling is **Afriyie** (event page, flyer, bio), and that's what the program uses.
 - **“Presented by”** is our reading of the layout: each award block lists a person and then the award in bold, so that person presents the award. Please confirm.
-- **“Campaign Volunteer Recognition”** (run of show) and **“Volunteers of the Year”** (flyer) may be the same segment. We need to know whether any volunteers are named, and which title to use.
+- **Resolved 2026-09-25:** neither “Campaign Volunteer Recognition” nor “Volunteers of the Year” is part of this event (D14). Original note: **“Campaign Volunteer Recognition”** (run of show) and **“Volunteers of the Year”** (flyer) may be the same segment. We need to know whether any volunteers are named, and which title to use.
 - Times are start times. The program page says times are approximate.
 
 ## Raw run of show v1 (as received 2026-09-23, text only)

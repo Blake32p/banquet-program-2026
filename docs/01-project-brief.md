@@ -52,7 +52,7 @@ Hero and honoree roll → Program → Honorees → Congratulations and Karen and
 | Honoree bios (Anthony, Jill, Corrie) | ✅ Have, verbatim | Event page → `content/honorees.md` |
 | Honoree photos | ✅ Have, compressed | Event page → `public/assets/img/` |
 | **Run of show** | ✅ Version 1 received; revisions expected | Event team → `content/run-of-show.md` |
-| **Volunteers of the Year** (names and citations) | ❓ Needed | Committee |
+| **Volunteers of the Year** (names and citations) | ✖ Not announced at this event (Blake, 2026-09-25) | Committee |
 | Outstanding Volunteers list (last year had about 50) | ❓ Ask whether there is one | Committee |
 | Thank-you note from Karen and Kathleen | ✅ Keep exact approved wording and sign-off | Canva closing page; D16 |
 | “Paid for by” attribution line | ❓ Confirm whether it's needed | Chair / Treasurer |

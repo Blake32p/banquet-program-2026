@@ -91,7 +91,6 @@ p{margin:0 0 1em}
 .roll a{display:flex;align-items:center;justify-content:space-between;gap:.75rem;min-height:3.25rem;padding:.3rem 0;color:var(--text);text-decoration:none;font-weight:700;font-size:1.25rem;line-height:1.3;border-top:1px solid var(--rule-soft)}
 .roll ul[aria-labelledby]>li:first-child a{border-top:0}
 .roll .name{flex:1}
-.roll .tba{color:var(--text-soft);font-weight:400}
 .chev{flex:none;width:.6rem;height:.6rem;border-right:2px solid var(--gold);border-top:2px solid var(--gold);transform:rotate(45deg);margin-right:.35rem}
 
 /* Sections */
@@ -142,7 +141,6 @@ details:not([open]) .less{display:none}
 /* With JS, "Show less" sits at the end of the bio instead of between paragraphs (D29). */
 details.enh[open]>summary{display:none}
 .bio p[tabindex]{outline:0}
-.placeholder{border:1px dashed var(--rule);border-radius:16px;padding:1.25rem;text-align:center;color:var(--text-soft);margin-top:1.5rem}
 
 /* About and contact footer */
 .footer-about{padding:0 0 2rem;color:var(--text);text-align:left}
@@ -294,12 +292,6 @@ summary:active,.bio-less:active{color:var(--text)}
           <li><a href="#corrie"><span class="name">Corrie <span class="nowrap">Folsom-O’Keefe</span></span><span class="chev" aria-hidden="true"></span></a></li>
         </ul>
       </li>
-      <li>
-        <p class="roll-group" id="roll-volunteers">Volunteers of the Year</p>
-        <ul aria-labelledby="roll-volunteers">
-          <li><a href="#volunteers"><span class="name tba">To be announced</span><span class="chev" aria-hidden="true"></span></a></li>
-        </ul>
-      </li>
     </ul>
   </nav>
 </header>
@@ -316,17 +308,16 @@ summary:active,.bio-less:active{color:var(--text)}
       <li><time>11:20 AM</time><h3>Welcome remarks</h3>
         <ul class="people">
           <li>Stratford Democrats Chair <strong>Kathleen Callahan</strong></li>
-          <li>Senator <strong>Richard Blumenthal</strong></li>
           <li>Lieutenant Governor <strong>Susan Bysiewicz</strong></li>
           <li>Secretary of the State <strong>Stephanie Thomas</strong></li>
           <li>State Comptroller <strong>Sean Scanlon</strong></li>
+          <li>Senator <strong>Richard Blumenthal</strong></li>
           <li>Governor <strong>Ned Lamont</strong></li>
         </ul></li>
       <li><time>12:00 PM</time><h3>Brunch</h3></li>
       <li><time>1:00 PM</time><h3>Awards</h3>
         <ol class="awards">
           <li><span class="seg">Opening remarks</span><p>Stratford Mayor <strong>David Chess</strong></p></li>
-          <li><span class="seg">Campaign Volunteer Recognition</span><p><strong>Kathleen Callahan</strong></p></li>
           <li><span class="seg">Terry Backer Environmental Champion</span><span class="honor"><a href="#corrie"><span class="name">Corrie <span class="nowrap">Folsom-O’Keefe</span></span><span class="chev" aria-hidden="true"></span></a></span><p class="by">Presented by State Representative <strong>Joe Gresko</strong></p></li>
           <li><span class="seg">Stratford Democrat of the Year</span><span class="honor"><a href="#anthony"><span class="name">Anthony Afriyie</span><span class="chev" aria-hidden="true"></span></a></span><p class="by">Presented by State Senate Candidate <strong>Carolann Reid</strong></p></li>
           <li><span class="seg">Stratford Democrat of the Year</span><span class="honor"><a href="#jill"><span class="name">Jill <span class="nowrap">D’Angelo-Powers</span></span><span class="chev" aria-hidden="true"></span></a></span><p class="by">Presented by Stratford Democrats Political Director and Treasurer <strong>Karen Tracy</strong></p></li>
@@ -388,9 +379,6 @@ summary:active,.bio-less:active{color:var(--text)}
         </details>
       </div>
     </article>
-
-    <h3 class="award-title" id="volunteers">Volunteers of the Year</h3>
-    <div class="placeholder">Draft: honoree names and citations needed. See <code>content/honorees.md</code>.</div>
   </section>
 
   <!-- Tributes: the ad book (D32). Ads in the committee’s numbered order; Karen and Kathleen’s closing is the last one. -->

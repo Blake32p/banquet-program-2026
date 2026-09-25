@@ -37,7 +37,7 @@ If the committee prefers the Canva design as the PDF: export it from Canva as **
 ## C. Pre-launch QA (Friday)
 
 **Content**
-- [ ] Every name is spelled exactly: Afriyie, D’Angelo-Powers, Folsom-O’Keefe, and the Volunteers of the Year
+- [ ] Every name is spelled exactly: Afriyie, D’Angelo-Powers, Folsom-O’Keefe (no Volunteers of the Year section, D14)
 - [ ] Times match the final run of show, and the award order matches the stage order
 - [ ] Bios match `content/honorees.md` word for word. The “Photo by Luke Franke” credit is under **Corrie’s** photo.
 - [ ] No `Draft:` notes, placeholder text, or `DRAFT COPY` comments remain, **or** each remaining one is approved

@@ -1,6 +1,6 @@
 # Honorees — 2026 Annual Awards Banquet
 
-**Status:** Bios copied word for word from the event page on 2026-09-23. Volunteers of the Year are still to be confirmed.
+**Status:** Bios copied word for word from the event page on 2026-09-23. Volunteers of the Year will not be announced at this event (Blake, 2026-09-25).
 **Source:** https://www.stratforddemocrats.com/annual-awards-banquet/2026
 **Photos:** `source-assets/honoree-photos/` (720px originals from the website). Web versions are in `public/assets/img/` (480×480 square crops, WebP, 13–25 KB).
 
@@ -48,15 +48,15 @@ In 2022, Corrie oversaw a salt marsh restoration project at the Great Meadows Ma
 
 ---
 
-## Volunteers of the Year — NAMES COMING (Blake, 2026-09-23)
+## Volunteers of the Year — NOT AT THIS EVENT (Blake, 2026-09-25)
 
-The flyer lists the award but no names. The names are on their way; add them to the `#volunteers` card in `public/index.html`. In run of show v1, this is the “Campaign Volunteer Recognition” segment, presented by Kathleen Callahan. Last year the program gave each volunteer a named paragraph (“In recognition of…”).
+**Blake, 2026-09-25: Volunteers of the Year will not be announced at this event.** The placeholder was removed from the honoree roll and the Honorees section; do not add names. The notes below are kept for reference only. (Earlier, 2026-09-23: the flyer lists the award but no names.) In run of show v1, this is the “Campaign Volunteer Recognition” segment, presented by Kathleen Callahan. Last year the program gave each volunteer a named paragraph (“In recognition of…”).
 
 - [ ] Names (exact spelling, including accents and hyphens)
 - [ ] One citation paragraph each (about 60–90 words)
 - [ ] Photos (optional; if one volunteer has a photo, all of them should)
 
-## Outstanding Volunteers list — NEEDED (optional)
+## Outstanding Volunteers list — NOT NEEDED (Blake, 2026-09-25)
 
 Last year’s program listed about 50 names in three columns under “#VolunteersWinElections.” Confirm whether 2026 has a list.
 

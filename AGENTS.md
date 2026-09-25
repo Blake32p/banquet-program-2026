@@ -10,7 +10,7 @@ A **digital-only program** for the Stratford Democratic Town Committee's 2026 An
 - **Honorees:**
   - Democrats of the Year: Anthony Afriyie and Jill D’Angelo-Powers
   - Terry Backer Environmental Champion Award: Corrie Folsom-O’Keefe
-  - Volunteers of the Year: names still to come
+  - Volunteers of the Year: not announced at this event (Blake, 2026-09-25); no volunteers section in the program
 - **Owner / main contact:** Blake Powers. **Committee Chair:** Kathleen Callahan.
 - **Hard deadline:** the QR code must be final by **Thu Sep 24** so table cards can print. Content locks **Sat Sep 26**. Content freezes **Sun Sep 27, 9:30 AM**.
 

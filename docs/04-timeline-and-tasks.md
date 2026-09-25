@@ -19,7 +19,7 @@ Legend: 👤 owner (Blake) · 🏛️ committee (Kathleen/Karen/event team) · �
 - 👤/🤖 Confirm `https://program.stratforddemocrats.com` loads over HTTPS on a phone using cellular data.
 - 👤 Test-scan `print/qr-program.svg` once the domain is live. Then send the table-card artwork to print.
 - 🤖 Integrate revisions to run-of-show v1 in `content/run-of-show.md`, then the page. Version 1 is already received.
-- 🤖 Add Volunteers of the Year when names and citations arrive. Sponsors and the extra Terry Backer blurb are omitted (D22).
+- ✖ Volunteers of the Year: not announced at this event; placeholder removed (Blake, 2026-09-25). Sponsors and the extra Terry Backer blurb are omitted (D22).
 - 🏛️ Review `docs/mockups/redesign-v1.html` on a phone. Collect feedback in one message.
 - 🏛️ Resolve D7 (PDF source) and remaining content decisions. D4 is settled (Allura); D6 is settled (no website Sponsors).
 
@@ -54,8 +54,8 @@ Legend: 👤 owner (Blake) · 🏛️ committee (Kathleen/Karen/event team) · �
 > The digital program for Sunday's banquet is underway. Guests will scan a QR code on each table. So I can finish it, could you send the following by **Thursday midday**?
 >
 > 1. **Any updates to run-of-show version 1,** including times, award order, and confirmation of who is presenting
-> 2. **Volunteers of the Year:** names (exact spelling) and a short citation for each, plus photos if you'd like them included
-> 3. **Outstanding Volunteers list,** if we're doing one again this year
+> 2. ~~**Volunteers of the Year:** names and citations~~ Not needed: not announced at this event (Blake, 2026-09-25)
+> 3. ~~**Outstanding Volunteers list**~~ Not needed (Blake, 2026-09-25)
 > 4. Does the page need a **“Paid for by…” line**?
 >
 > Thanks!

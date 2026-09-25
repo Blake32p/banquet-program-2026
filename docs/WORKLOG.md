@@ -14,6 +14,17 @@
 
 ---
 
+## 2026-09-25 16:23 ET · Claude · Blumenthal moved before Lamont; Volunteers of the Year and Campaign Volunteer Recognition removed (local, not yet published)
+
+**Did:** (1) Per Blake, Welcome remarks order is now Kathleen Callahan → Susan Bysiewicz → Stephanie Thomas → Sean Scanlon → **Richard Blumenthal** → Ned Lamont (last). `content/run-of-show.md` table + dated change note first, then `public/index.html`. (2) Per Blake, Volunteers of the Year will not be announced at this event: removed the “Volunteers of the Year / To be announced” row from the honoree roll and the `#volunteers` heading + draft placeholder from Honorees; removed the now-unused `.roll .tba` and `.placeholder` CSS. (3) Then, per Blake, removed the schedule’s “Campaign Volunteer Recognition — Kathleen Callahan” Awards item: `content/run-of-show.md` table row removed with a dated change note and the editorial note marked resolved (raw v1 text unchanged), then `public/index.html`; D14 updated. Updated `content/honorees.md`, `AGENTS.md` (honorees list), D14 (DECIDED) and D19 wording, and the brief, task list, and launch checklist items that asked for volunteer names.
+**Checked:** :4173 at 375px: speaker order correct; roll and Honorees list only Democrats of the Year and the Terry Backer award; Corrie’s card ends Honorees with the same 60px gap to the Tributes divider as Program → Honorees; no broken in-page anchors, no console errors, no horizontal overflow. Budget OK (HTML 11,127 bytes gzipped; first visit 111,390; full page 231,680). `git diff --check` passes.
+**Decisions:** D14 decided (not at this event); D19 wording updated.
+**Also checked:** Awards now lists Opening remarks → Terry Backer → Stratford Democrat of the Year ×2; the first item has no top rule; no horizontal overflow.
+**Blocked on / waiting for:** Blake’s OK to publish.
+**Next step (exact):** On Blake’s OK, commit the changed files and this log; push to `main`; confirm the Pages run and that the live HTML matches.
+
+---
+
 ## 2026-09-24 16:36 ET · Claude · Governor Lamont moved to last in Welcome remarks; full-page ad matches other ad widths (local, not yet published)
 
 **Did:** (1) Per Blake, Welcome remarks order is now Kathleen Callahan → Richard Blumenthal → Susan Bysiewicz → Stephanie Thomas → Sean Scanlon → **Ned Lamont** (last). `content/run-of-show.md` updated first (table + dated change note), then `public/index.html`. (2) Per Blake, Patti Moonan’s ad is a paid full-page ad, so it must be as wide as the other ads: removed the `.ad.tall` 22rem cap and its class. Updated the Tributes line in `docs/03-design-system.md`.
