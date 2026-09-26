@@ -174,8 +174,9 @@ footer h2{color:var(--text);font-size:1.5rem;margin-bottom:1rem}
 
 /* Bottom navigation */
 .tabbar{position:fixed;left:0;right:0;bottom:0;z-index:10;background:var(--bg-deep);border-top:1px solid var(--rule);padding-bottom:env(safe-area-inset-bottom)}
-.tabbar ul{display:flex;list-style:none;margin:0 auto;padding:0 env(safe-area-inset-right) 0 env(safe-area-inset-left);max-width:40rem}
-.tabbar li{flex:1}
+.tabbar ul{position:relative;display:flex;list-style:none;margin:0 auto;padding:0 env(safe-area-inset-right) 0 env(safe-area-inset-left);max-width:40rem}
+/* Each tab gets its label width plus an equal share of the rest, so the gaps between labels are equal. */
+.tabbar li{flex:1 1 auto}
 .tabbar a{display:flex;align-items:center;justify-content:center;min-height:var(--bar-h);color:var(--text-soft);text-decoration:none;font-weight:700;font-size:clamp(.9375rem,4vw,1.0625rem);letter-spacing:.01em}
 .tabbar a[aria-current="true"]{color:var(--gold);box-shadow:inset 0 3px 0 var(--gold)}
 
@@ -204,13 +205,9 @@ summary:active,.bio-less:active{color:var(--text)}
   .tabbar a{transition:color 140ms ease-out}
   details[open]>p{animation:bio-open 180ms ease-out}
   /* One gold tab marker glides to the active tab (D30). Reduced motion keeps the per-tab bar above. */
-  .tabbar ul{position:relative}
   .tabbar a[aria-current="true"]{box-shadow:none}
-  .tabbar ul::after{content:"";position:absolute;top:0;left:env(safe-area-inset-left);width:calc((100% - env(safe-area-inset-left) - env(safe-area-inset-right))/4);height:3px;background:var(--gold);opacity:0;transition:transform 320ms var(--motion-ease),opacity 200ms ease-out}
+  .tabbar ul::after{content:"";position:absolute;top:0;left:0;width:var(--tab-w,0);height:3px;background:var(--gold);opacity:0;transform:translateX(var(--tab-x,0));transition:transform 320ms var(--motion-ease),width 320ms var(--motion-ease),opacity 200ms ease-out}
   .tabbar ul:has(a[aria-current="true"])::after{opacity:1}
-  .tabbar ul:has(li:nth-child(2) a[aria-current="true"])::after{transform:translateX(100%)}
-  .tabbar ul:has(li:nth-child(3) a[aria-current="true"])::after{transform:translateX(200%)}
-  .tabbar ul:has(li:nth-child(4) a[aria-current="true"])::after{transform:translateX(300%)}
   @keyframes gold-glint{
     0%{opacity:.65;transform:scale(.85) rotate(-12deg)}
     45%{opacity:1;transform:scale(1.12) rotate(4deg)}
@@ -437,7 +434,7 @@ summary:active,.bio-less:active{color:var(--text)}
 </nav>
 
 <script>
-/* Highlights the tab for the section on screen, moves "Show less" to the end of each bio (D29), and opens bios for printing. */
+/* Highlights the tab for the section on screen (the gold marker follows its width), moves "Show less" to the end of each bio (D29), and opens bios for printing. */
 (function(){
   [].forEach.call(document.querySelectorAll('.bio details'),function(d){
     var s=d.firstElementChild,b=document.createElement('button');
@@ -446,9 +443,11 @@ summary:active,.bio-less:active{color:var(--text)}
     s.addEventListener('click',function(){if(!d.open)setTimeout(function(){var p=s.nextElementSibling;p.tabIndex=-1;p.focus({preventScroll:true})})});
     b.addEventListener('click',function(){d.open=false;s.focus({preventScroll:true});s.scrollIntoView({block:'center'})});
   });
-  var links=[].slice.call(document.querySelectorAll('.tabbar a'));
+  var ul=document.querySelector('.tabbar ul'),links=[].slice.call(ul.querySelectorAll('a'));
   var byId={};links.forEach(function(a){byId[a.hash.slice(1)]=a});
-  function mark(id){links.forEach(function(a){a.setAttribute('aria-current',a===byId[id]?'true':'false')})}
+  function place(){var a=ul.querySelector('[aria-current="true"]');if(a){a=a.parentNode;ul.style.setProperty('--tab-x',a.offsetLeft+'px');ul.style.setProperty('--tab-w',a.offsetWidth+'px')}}
+  function mark(id){links.forEach(function(a){a.setAttribute('aria-current',a===byId[id]?'true':'false')});place()}
+  addEventListener('resize',place);if(document.fonts)document.fonts.ready.then(place);
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)mark(e.target.id)})},{rootMargin:'-40% 0px -55% 0px'});
     Object.keys(byId).forEach(function(id){var s=document.getElementById(id);if(s)io.observe(s)});

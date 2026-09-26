@@ -14,6 +14,16 @@
 
 ---
 
+## 2026-09-26 09:30 ET · Claude · Bottom tabs evenly spaced; gold marker follows each tab’s width
+
+**Did:** Per Blake, the four tab labels now have equal gaps. `public/index.html`: `.tabbar li{flex:1 1 auto}` (label width + equal share of the leftover space; the whole bar stays tappable) and `.tabbar ul{position:relative}` moved out of the motion block. The gliding marker now uses `left:0; width:var(--tab-w); transform:translateX(var(--tab-x))` (width and position animate); the fixed quarter-width and `nth-child` rules were removed. Script: `place()` measures the active tab’s `offsetLeft`/`offsetWidth` into those properties after each `mark()`, on `resize`, and after `document.fonts.ready`. Updated the tab-bar lines in `docs/03-design-system.md`. JS is now 1,799 bytes (≤ 2 KB).
+**Checked:** Before (live): gaps 8·10·24px at 320, 22·24·37px at 375. After (:4173): 16·16·16 with 8px edges at 320; 30·30·30 with 15px edges at 375; 87·87·87 at 768; no horizontal overflow; narrowest tab (About) 64px at 320. Marker matches the active tab exactly for Program, Honorees, Tributes, and About, scrolling down and back up, and re-aligns after resizing 320 → 768 → 375. No console errors. Budget OK. Reduced-motion fallback (per-tab inset bar) is unchanged and not re-tested; without JS there is no active tab, as before.
+**Decisions:** none new (tab-bar detail under D5/D30).
+**Blocked on / waiting for:** nothing; Blake approved publishing.
+**Next step (exact):** Commit, push to `main`, confirm the Pages run and that the live HTML matches.
+
+---
+
 ## 2026-09-25 16:53 ET · Claude · Built the downloadable PDF keepsake and linked it at the bottom of the program (local, not yet published)
 
 **Did:** Per Blake (a PDF “based on this site,” referencing the flyer and promo graphics Blake attached): new `pdf/program.html`, 10 US Letter pages in the flyer’s look (full-bleed navy with soft lights, gold Poppins caps, Allura “Banquet,” gold sparkles): (1) cover modeled on the flyer, with logo, title, “Sunday, September 27, 2026 · 11 AM – 2 PM · Blackhawk Country Club · 385 Oronoque Ln, Stratford” (address from the flyer), and the framed “Celebrating our 2026 honorees” box; (2) Program; (3–5) one honoree per page (medallion portrait, presenter, full verbatim bio, Corrie’s photo credit); (6–8) Tributes: ad 1 under the section title, ads 2 and 3 together, Patti Moonan’s full-page ad alone; (9) Karen and Kathleen’s closing; (10) About, Stay connected (visible URLs), logo. No Volunteers of the Year (D14), no email or phone (D24). The Tributes line drops the web-only “Tap one to see it full size.” New `pdf/background.html` (page backgrounds), `scripts/build-pdf.sh` (JPEG copies of the site’s images → background JPEGs → headless Chrome print over a temporary local server → checks) and `scripts/check-pdf.py`. Output: `public/assets/2026-annual-awards-banquet-program.pdf`. In `public/index.html`, “Draft: PDF to come” is now a link: gold underlined “Download the program” with “PDF · 1.1 MB” below, using `download` (D20); the label copy keeps its DRAFT COPY marker. `.gitignore` now excludes `pdf/img/`. Updated `AGENTS.md` (folder map, a rule to rebuild the PDF after any content change, the build command), D7, D20, D33, docs 01/03/04/05.
