@@ -14,6 +14,16 @@
 
 ---
 
+## 2026-09-26 09:40 ET · Claude · Smaller PDF size note in the footer
+
+**Did:** Per Blake, the “PDF · 1.1 MB” note under “Download the program” is now 15px (`.pdf .hint{font-size:.9375rem}`), the project’s minimum text size (same as the photo credit); it had inherited the 19px body size. Tried 17px first; Blake chose 15px (“15pt,” read as the offered 15px).
+**Checked:** :4173 at 375px: link label 19px, note 15px, no horizontal overflow; visual check in the footer. Budget OK; `git diff --check` passes.
+**Decisions:** none.
+**Blocked on / waiting for:** Blake’s OK to publish.
+**Next step (exact):** On OK, commit `public/index.html` and this log, push, and confirm the live HTML matches.
+
+---
+
 ## 2026-09-26 09:33 ET · Claude · Link-preview (share) image of the page top (local, not yet published)
 
 **Did:** Blake reported that shared links previewed with the first ad; the page had no `og:image`, so apps picked the first large image. Built `public/assets/img/share-card.jpg` (1200×630, 110,817 bytes): logo, “2026 / ANNUAL AWARDS / Banquet,” sparkles, and “SUNDAY, SEPTEMBER 27 · 11 AM – 2 PM / Blackhawk Country Club” on the page’s navy gradient, using the site’s own fonts and logo. Source: `source-assets/share/share-card.html` (unpublished; render at 1200×630, device scale 1, from the project root on :4174, screenshot, `sips` to JPEG q85). In `public/index.html` `<head>`, replaced the og:image TODO with `og:site_name`, `og:url`, `og:image` (absolute URL) + type/width/height/alt, and `twitter:card=summary_large_image`.
