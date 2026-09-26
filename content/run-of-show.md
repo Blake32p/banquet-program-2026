@@ -21,7 +21,7 @@ Guest-facing style rules:
 | Time | Segment | Speakers / details |
 |---|---|---|
 | 11:00 AM | Arrival | Coffee, tea & cocktails |
-| 11:20 AM | Welcome remarks | Stratford Democrats Chair **Kathleen Callahan** · Lieutenant Governor **Susan Bysiewicz** · Secretary of the State **Stephanie Thomas** · State Comptroller **Sean Scanlon** · Senator **Richard Blumenthal** · Governor **Ned Lamont** |
+| 11:20 AM | Welcome remarks | Stratford Democrats Chair **Kathleen Callahan** · Senator **Richard Blumenthal** · Lieutenant Governor **Susan Bysiewicz** · Secretary of the State **Stephanie Thomas** · State Comptroller **Sean Scanlon** · Governor **Ned Lamont** |
 | 12:00 PM | Brunch | |
 | 1:00 PM | Awards | Opening remarks: Stratford Mayor **David Chess** |
 | | | Terry Backer Environmental Champion: **Corrie Folsom-O’Keefe**, presented by State Representative **Joe Gresko** |
@@ -34,6 +34,7 @@ Guest-facing style rules:
 - **2026-09-24 (Blake, in chat):** move Governor **Ned Lamont** to the end of Welcome remarks, after State Comptroller Sean Scanlon.
 - **2026-09-25 (Blake, in chat):** move Senator **Richard Blumenthal** to just before Governor Ned Lamont (Lamont remains last).
 - **2026-09-25 (Blake, in chat):** remove the “Campaign Volunteer Recognition” segment (Kathleen Callahan) from the Awards; volunteers are not recognized at this event (D14).
+- **2026-09-26 (Blake, in chat):** Senator **Richard Blumenthal** will speak earlier than planned; move him to just before Lieutenant Governor Susan Bysiewicz (after Kathleen Callahan).
 - The raw v1 text below is unchanged.
 
 ### Editorial notes on v1 (confirm with the event team)

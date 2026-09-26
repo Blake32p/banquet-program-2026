@@ -14,6 +14,16 @@
 
 ---
 
+## 2026-09-26 19:56 ET · Claude · Blumenthal moved to second in Welcome remarks (local, not yet published)
+
+**Did:** Per Blake, Senator Richard Blumenthal will speak earlier than planned. Welcome remarks order is now Kathleen Callahan → **Richard Blumenthal** → Susan Bysiewicz → Stephanie Thomas → Sean Scanlon → Ned Lamont. `content/run-of-show.md` table + dated change note first, then `public/index.html`.
+**Checked:** :4173 at 375px: order correct, no console errors, no horizontal overflow. Budget OK; `git diff --check` passes.
+**Decisions:** none.
+**Blocked on / waiting for:** Blake’s OK to publish.
+**Next step (exact):** On OK, commit `content/run-of-show.md`, `public/index.html`, and this log; push; confirm the live HTML matches.
+
+---
+
 ## 2026-09-26 19:40 ET · Claude · Added the phone cloud-session path to the event-day guide (docs only)
 
 **Did:** Blake asked whether he can edit the project from his phone as a cloud project. Checked Claude Code’s cloud-session docs (via a claude-code-guide subagent): sessions start from the Claude app’s **Code** tab against the GitHub repo, run on Ubuntu with no Chrome, poppler, or webp preinstalled, and push to a session branch (a PR Blake merges), not to `main`. `scripts/build-pdf.sh` is macOS-only (`sips`, the Mac Chrome path), so the PDF can’t be rebuilt in the cloud. Updated `docs/day-of-changes.md` (a new first section with a ready-to-use request, a tonight test, and the PDF caveat), `AGENTS.md` (what a cloud agent should do instead of the PDF build), and D35.
