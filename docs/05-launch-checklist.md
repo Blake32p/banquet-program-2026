@@ -79,7 +79,7 @@ The PDF is built from its own print layout, `pdf/program.html`, using the site's
 
 ## E. Event day
 
-- [ ] **9:30 AM freeze.** After this, fix only real errors.
+- [ ] **9:30 AM freeze.** After this, only small changes Blake approves (D35). How: `docs/day-of-changes.md`.
 - [ ] 10:15 AM on site: scan a card on cellular at 2–3 spots in the room. Check guest Wi-Fi.
 - [ ] Put backup printed copies at registration
 - [ ] Someone who can edit (Blake) keeps a laptop or phone with GitHub access nearby

@@ -14,6 +14,26 @@
 
 ---
 
+## 2026-09-26 19:20 ET · Claude · Bigger text in the family tribute ad (local, not yet published)
+
+**Did:** Blake viewed the live ad on his phone: “the text is a bit small.” In `content/private/jill-tribute/concepts.html` (#c, the ad’s source), the message went from 42 to 54 px, the headline from 124 to 140, the kicker from 36 to 42, and the signature from 44 to 51 (on the 2000×1294 layout), and the photo shrank from 1100×825 to 1000×750 to make room. Re-rendered `final-master.png` (the old one is `final-master-v1.png`), encoded WebP q55 at 1000×647 → `public/assets/img/ads/ad-powers-family.webp` (44,722 bytes; same size and alt text, since the words didn’t change). Rebuilt the PDF. D34 updated. Before/after at phone size: `content/private/jill-tribute/context-size.html`.
+**Checked:** `build-pdf.sh` passes (1,312,686 bytes, 10 pages, 76 of 76, label still “PDF · 1.3 MB”); budget OK (ad 44,722 ≤ 46,080; full page 276,846). Before/after compared at 390 px wide, 3× scale.
+**Decisions:** D34 updated.
+**Blocked on / waiting for:** Blake’s OK to publish (together with the day-of docs in the entry below).
+**Next step (exact):** With Blake’s OK: commit the ad, the rebuilt PDF, and the docs; push to `main`; watch the Pages run; confirm the live ad is 44,722 bytes.
+
+---
+
+## 2026-09-26 19:05 ET · Claude · Event-day change plan (docs only, no page changes)
+
+**Did:** Per Blake (“We need the option to make small content changes tomorrow…”), wrote `docs/day-of-changes.md`: what counts as a small change, the fast path (an agent on Blake’s Mac edits the site and PDF, rebuilds, and publishes), a phone-only fallback (edit `public/index.html` on github.com; the PDF catches up the same day), and exactly where each speaker, presenter, and time appears in both files. Relaxed the freeze wording in `AGENTS.md`, `docs/04-timeline-and-tasks.md`, and `docs/05-launch-checklist.md` to point to it. D35 recorded.
+**Checked:** Every line number in the guide against the current `public/index.html` and `pdf/program.html`; the GitHub edit link format; the Pages workflow deploys on any push to `main` that touches `public/`. No change to `public/`, so no deploy.
+**Decisions:** D35 (new).
+**Blocked on / waiting for:** Blake’s OK to commit and push these docs (so the guide can be opened on GitHub from a phone), and whether to set up Remote Control and keep the Mac awake for tomorrow.
+**Next step (exact):** On event day, follow `docs/day-of-changes.md` for any change Blake approves.
+
+---
+
 ## 2026-09-26 18:45 ET · Claude · Added the Powers family’s tribute ad as the second Tribute (published)
 
 **Did:** Blake chose concept C (the “Jill” headline, no stars; see the entry below). New `public/assets/img/ads/ad-powers-family.webp` (1000×647, 44,992 bytes, WebP q55 with sharp YUV from a 4000 px render of `content/private/jill-tribute/concepts.html#c`, saved as `final-master.png`). `public/index.html`: new second `<li>` in `.ads` (links to itself full size, new tab, lazy, alt text transcribes the ad), updated the Tributes comment, and the download label now says “PDF · 1.3 MB.” `pdf/program.html`: the ad sits under ad 1 on the Tributes opener (both 5.8 in wide, was 6.6 in for ad 1 alone); the other ad pages renumber (`start="3"`, `start="5"`). Rebuilt the PDF. D34 added; AGENTS.md’s ad-book rule notes the exception.

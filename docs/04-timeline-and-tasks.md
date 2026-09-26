@@ -38,9 +38,9 @@ Legend: 👤 owner (Blake) · 🏛️ committee (Kathleen/Karen/event team) · �
 - 👤 Print 10–15 backup copies of the PDF for the registration table (D13)
 
 ## Sun Sep 27: event day
-- **9:30 AM:** content freeze. After that, fix only real errors, such as a misspelled name.
+- **9:30 AM:** content freeze. After that, only small changes Blake approves, such as a speaker who can’t come or a misspelled name (D35).
 - **10:15 AM (on site):** scan a table card at the venue on cellular. Note the signal strength. Ask the club whether there's guest Wi-Fi. If there is, a small “Wi-Fi: ___ / Password: ___” sign next to the QR code helps a lot.
-- **If a last-minute change is needed:** edit `public/index.html`, commit, and push. GitHub Pages takes 1–10 min, and a guest who already opened the page may see the old copy for up to 10 more minutes.
+- **If a last-minute change is needed:** follow `docs/day-of-changes.md` (ask Claude or Codex on Blake’s Mac, or edit on GitHub from a phone). A change is live 1–2 min after the push, and a guest who already opened the page may see the old copy for up to 10 more minutes.
 - **After the event:** keep the program up for at least 2 weeks. Then decide whether to archive it at `/2026` on the main site.
 
 ---

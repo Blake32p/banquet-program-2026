@@ -12,7 +12,7 @@ A **digital-only program** for the Stratford Democratic Town Committee's 2026 An
   - Terry Backer Environmental Champion Award: Corrie Folsom-O’Keefe
   - Volunteers of the Year: not announced at this event (Blake, 2026-09-25); no volunteers section in the program
 - **Owner / main contact:** Blake Powers. **Committee Chair:** Kathleen Callahan.
-- **Hard deadline:** the QR code must be final by **Thu Sep 24** so table cards can print. Content locks **Sat Sep 26**. Content freezes **Sun Sep 27, 9:30 AM**.
+- **Hard deadline:** the QR code must be final by **Thu Sep 24** so table cards can print. Content locks **Sat Sep 26**. Content freezes **Sun Sep 27, 9:30 AM**; after that, only small changes Blake approves, such as a speaker who can’t come (D35). How: `docs/day-of-changes.md`.
 
 ## Start here: every session, every agent
 
@@ -33,7 +33,7 @@ A **digital-only program** for the Stratford Democratic Town Committee's 2026 An
 | `pdf/` | Source for that PDF: `program.html` (10 Letter pages in the flyer’s navy and gold) and `background.html`. `pdf/img/` is build output (gitignored) | No |
 | `content/` | **Source of truth for words.** Honoree bios, run of show, About/footer; archived sponsor reference | No |
 | `content/private/` | Internal run-of-show notes and anything not for guests (gitignored) | No |
-| `docs/` | Brief, hosting research, design system, timeline, launch checklist, decisions, worklog | No |
+| `docs/` | Brief, hosting research, design system, timeline, launch checklist, decisions, worklog, and `day-of-changes.md` (how to make an event-day change, including from a phone) | No |
 | `reference/` | The 2026 flyer and the Canva draft PDF (gitignored; may hold draft content) | No |
 | `source-assets/` | Original, full-size photos | No |
 | `Logos/` | Logo files supplied by the owner. Use `stratford-democrats-light.svg` on dark backgrounds | No |
@@ -51,7 +51,7 @@ A **digital-only program** for the Stratford Democratic Town Committee's 2026 An
 - Credit Corrie’s photo: “Photo by Luke Franke.” (It is the caption on her photo on the event page.)
 - The **closing “Congratulations!” page** (from the last page of the Canva program) is the **last ad in the Tributes section**, the program’s ad book (D32). Keep its text exactly as written. The other ads are the committee’s artwork from `original-ad-images/`, in their numbered order, as compressed WebP in `public/assets/img/ads/`, with alt text that transcribes each ad. The one exception is the Powers family’s tribute to Jill (`ad-powers-family.webp`), which sits second, right after ad 1 (D34). A separate footer follows **Karen and Kathleen’s sign-off**: **About → Stay connected → PDF availability → Stratford Democrats logo**. Omit the footer email address and phone number (D24). Omit the additional Terry Backer award-background block (D22; the ad book, D32, replaces the old Sponsors idea); retain Corrie’s award title and biography.
 - The program schedule comes from the committee's run of show (`content/run-of-show.md`). Changes are expected, so apply each new version there first.
-- **The PDF repeats the page’s words (D33).** After any content change in `public/index.html`, make the same change in `pdf/program.html`, run `bash scripts/build-pdf.sh`, and publish the rebuilt PDF together with the page change. The build fails if any site text is missing from the PDF, a page overflows, a fallback font slips in, the file exceeds 1.5 MB, or the download link’s size label is out of date.
+- **The PDF repeats the page’s words (D33).** After any content change in `public/index.html`, make the same change in `pdf/program.html`, run `bash scripts/build-pdf.sh`, and publish the rebuilt PDF together with the page change. (Event-day exception, D35: if only the website can be edited, from a phone, the site goes first and the PDF catches up the same day.) The build fails if any site text is missing from the PDF, a page overflows, a fallback font slips in, the file exceeds 1.5 MB, or the download link’s size label is out of date.
 
 **Speed** (guests may have weak cell service)
 - No frameworks, no build step, no CDNs, no third-party scripts, trackers, embeds, or web-font services. Everything is served from `public/`.
