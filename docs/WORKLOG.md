@@ -14,6 +14,16 @@
 
 ---
 
+## 2026-09-26 19:40 ET · Claude · Added the phone cloud-session path to the event-day guide (docs only)
+
+**Did:** Blake asked whether he can edit the project from his phone as a cloud project. Checked Claude Code’s cloud-session docs (via a claude-code-guide subagent): sessions start from the Claude app’s **Code** tab against the GitHub repo, run on Ubuntu with no Chrome, poppler, or webp preinstalled, and push to a session branch (a PR Blake merges), not to `main`. `scripts/build-pdf.sh` is macOS-only (`sips`, the Mac Chrome path), so the PDF can’t be rebuilt in the cloud. Updated `docs/day-of-changes.md` (a new first section with a ready-to-use request, a tonight test, and the PDF caveat), `AGENTS.md` (what a cloud agent should do instead of the PDF build), and D35.
+**Checked:** The build script’s Mac-only commands (lines 9, 21, 28). Nothing in `public/` changed.
+**Decisions:** D35 extended (cloud-session path).
+**Blocked on / waiting for:** Blake’s OK to push these docs; cloud sessions read the repo from GitHub, so they only see this guidance once it’s pushed. Blake to try a harmless cloud request tonight.
+**Next step (exact):** Push the docs with Blake’s OK. On event day, follow `docs/day-of-changes.md`; after any cloud-session change, rebuild the PDF on the Mac (`bash scripts/build-pdf.sh`) and publish it.
+
+---
+
 ## 2026-09-26 19:20 ET · Claude · Bigger text in the family tribute ad (published)
 
 **Did:** Blake viewed the live ad on his phone: “the text is a bit small.” In `content/private/jill-tribute/concepts.html` (#c, the ad’s source), the message went from 42 to 54 px, the headline from 124 to 140, the kicker from 36 to 42, and the signature from 44 to 51 (on the 2000×1294 layout), and the photo shrank from 1100×825 to 1000×750 to make room. Re-rendered `final-master.png` (the old one is `final-master-v1.png`), encoded WebP q55 at 1000×647 → `public/assets/img/ads/ad-powers-family.webp` (44,722 bytes; same size and alt text, since the words didn’t change). Rebuilt the PDF. D34 updated. Before/after at phone size: `content/private/jill-tribute/context-size.html`.
