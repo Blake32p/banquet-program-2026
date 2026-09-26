@@ -38,7 +38,7 @@ Guest-facing style rules:
 
 ### Editorial notes on v1 (confirm with the event team)
 - **Spelling:** the run of show says “Anthony Afiyie.” The correct spelling is **Afriyie** (event page, flyer, bio), and that's what the program uses.
-- **“Presented by”** is our reading of the layout: each award block lists a person and then the award in bold, so that person presents the award. Please confirm.
+- **“Presented by”** is our reading of the layout: each award block lists a person and then the award in bold, so that person presents the award. **Confirmed by Blake, 2026-09-26.**
 - **Resolved 2026-09-25:** neither “Campaign Volunteer Recognition” nor “Volunteers of the Year” is part of this event (D14). Original note: **“Campaign Volunteer Recognition”** (run of show) and **“Volunteers of the Year”** (flyer) may be the same segment. We need to know whether any volunteers are named, and which title to use.
 - Times are start times. The program page says times are approximate.
 

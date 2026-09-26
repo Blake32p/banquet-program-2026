@@ -14,6 +14,23 @@
 
 ---
 
+## 2026-09-26 09:48 ET · Claude · Fact-checked the section intro lines (no page changes)
+
+**Did:** Per Blake, checked each intro line against sources; no page edits. Results:
+- “Celebrating our 2026 honorees” (honoree box): verbatim from the 2026 save-the-date flyer (`reference/2026-save-the-date-flyer.jpg`).
+- “Recognizing service, leadership, and a commitment to our community.” (Honorees): **verbatim committee copy** from the event page https://www.stratforddemocrats.com/annual-awards-banquet/2026 (under “Our 2026 honorees”), fetched 2026-09-26. Correction: earlier entries called it unmarked agent copy; it is not. Each quality is also supported by the verbatim bios in `content/honorees.md`.
+- “Times are approximate.” (Program): no committee source; `reference/run-of-show-2026-09-23.docx` contains no “approximate/about/estimated.” It is an agent-added caveat (the run of show lists start times only). Blake says the intros are good.
+- “Messages of congratulations from our friends and supporters. Tap one to see it full size.” (Tributes, agent copy): partly inaccurate. Ads 1, 2, and the closing are congratulations; ad 3 is a business card with no message; ad 4 wishes two candidates luck on November 3rd. “Tap one” applies to the four ads, not the closing.
+- Top block: event page says “Sunday, September 27, 2026 · 11 AM – 2 PM Eastern time · Blackhawk Country Club”; Sept 27, 2026 is a Sunday.
+**Checked:** flyer image, run-of-show .docx text, live event page text, `content/honorees.md`, and the ad images.
+- “Coffee, tea & cocktails” (Arrival): from the run of show .docx (“11:00 Arrival, Coffee/Tea/Cocktails”), reformatted to program style when added on 2026-09-23 (`c9abf45`); no content added.
+**Decisions (Blake, in chat):** keep the Tributes line as written; keep “Coffee, tea & cocktails” as is. Blake considers the intros good.
+**Blocked on / waiting for:** none. The `DRAFT COPY` comments on the Program and Tributes intros are still in the HTML (invisible to guests); remove them the next time the page is edited, if Blake agrees.
+**Also (Blake):** “Presented by” wording confirmed; D17 marked ADOPTED and the run-of-show note updated.
+**Next step (exact):** No open content items remain before the Sat lock. Any further run-of-show changes go into `content/run-of-show.md` first, then `public/index.html`.
+
+---
+
 ## 2026-09-26 09:40 ET · Claude · Smaller PDF size note in the footer
 
 **Did:** Per Blake, the “PDF · 1.1 MB” note under “Download the program” is now 15px (`.pdf .hint{font-size:.9375rem}`), the project’s minimum text size (same as the photo credit); it had inherited the 19px body size. Tried 17px first; Blake chose 15px (“15pt,” read as the offered 15px).
