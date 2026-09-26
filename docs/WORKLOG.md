@@ -14,6 +14,29 @@
 
 ---
 
+## 2026-09-26 18:45 ET · Claude · Added the Powers family’s tribute ad as the second Tribute (local, not yet published)
+
+**Did:** Blake chose concept C (the “Jill” headline, no stars; see the entry below). New `public/assets/img/ads/ad-powers-family.webp` (1000×647, 44,992 bytes, WebP q55 with sharp YUV from a 4000 px render of `content/private/jill-tribute/concepts.html#c`, saved as `final-master.png`). `public/index.html`: new second `<li>` in `.ads` (links to itself full size, new tab, lazy, alt text transcribes the ad), updated the Tributes comment, and the download label now says “PDF · 1.3 MB.” `pdf/program.html`: the ad sits under ad 1 on the Tributes opener (both 5.8 in wide, was 6.6 in for ad 1 alone); the other ad pages renumber (`start="3"`, `start="5"`). Rebuilt the PDF. D34 added; AGENTS.md’s ad-book rule notes the exception.
+**Checked:** `build-pdf.sh`/`check-pdf.py` pass: 1,311,558 bytes, 10 pages, 76 of 76 site text blocks, the same 8 photos and ads in the same order as the site, label OK; page 6 viewed (both Jill ads fit; the new ad embeds at 173 ppi), page 7 unchanged. Budget OK: ad 44,992 (cap 46,080), Tributes ads 165,282, full page 277,116 (cap 307,200), first visit unchanged at 111,834. :4173 at 375px: order ad-1 → family → ad-2 → ad-3 → ad-4 → closing; the ad is 338 CSS px wide (≈1:1 with the 1000 px file on a 3× phone); no horizontal overflow at 375 or 320; no console errors. `git diff --check` passes. Every image except the header/footer logo is `loading="lazy"`.
+**Decisions:** D34 (new).
+**Blocked on / waiting for:** Blake’s OK to publish, and whether to hold it until Sunday morning (a surprise for Jill?). Blake offered to raise the 45 KB per-ad cap; not needed (see D34 and the chat).
+**Next step (exact):** With Blake’s OK: `git status`, then commit `public/index.html`, `public/assets/img/ads/ad-powers-family.webp`, the rebuilt PDF, `pdf/program.html`, `AGENTS.md`, and `docs/` (nothing from `content/private/`) and push to `main`; watch `gh run list -R Blake32p/banquet-program-2026`; confirm the live page serves the ad and the 1.3 MB PDF. Content freezes Sun 9:30 AM.
+
+---
+
+## 2026-09-26 13:25 ET · Claude · Brainstormed a family tribute ad (private; no page changes)
+
+**Did:** Per Blake, drafted three half-page tribute-ad concepts from Blake, Lauren, and Logan, using two family photos Blake supplied. Everything is in `content/private/jill-tribute/` (gitignored): `concepts.html` (open `/content/private/jill-tribute/concepts.html#a`, `#b`, or `#c` on :4174), renders `concept-a/b/c.png` at the ad book’s 2000×1294 size, and the photos as JPEG. A = navy and gold like the program (arcade photo); B = cream scrapbook with both photos as tilted prints; C = bright white with the Wildwood photo. All wording is draft.
+**Checked:** Renders viewed at full size; no text overflow; no faces covered in B. Nothing in `public/`, `pdf/`, or `content/` outside `private/` changed.
+**Decisions:** none.
+**Round 2 (13:35 ET):** Blake: the navy A would disappear on the program’s navy, and the ad shouldn’t match the program’s look. Made `concepts-a.html` (#a1 Sunshine yellow, #a2 Editorial white with coral, #a3 Handwritten note on sky blue), all with the arcade photo and message 1, set in macOS fonts (Futura, Avenir Next, Didot, Bradley Hand) since the ad is an image. Per Blake, removed the two gold stars from C (`concepts.html#c`), with no other change. `context.html` previews every concept inside the Tributes section at 390px on the page navy.
+**Round 3 (13:40 ET):** Per Blake, added C2 (`concepts.html#c2`, `concept-c2.png`): identical to C except the headline reads “So proud of you, Mom!” C is kept unchanged.
+**Round 4 (18:30 ET):** Blake and family chose **C** (the “Jill” version, no stars). Per Blake, made three more options of it in `concepts-c.html` with the same photo and words: #c3 Mirrored (photo left, “JILL!” in orange), #c4 Headline banner (one-line headline across the top), #c5 Postcard (cream, blue and orange airmail-stripe edge, stamp, and a “Stratford CT · Sep 27 2026” postmark). `context-c.html` previews C and the three options at 390px on the page navy. Port 4174 had stopped mid-session; restarted it as the `mockup` preview server.
+**Blocked on / waiting for:** Blake to pick a concept and wording, say whether it’s a surprise (affects when to publish), and choose where it goes in the ad order.
+**Next step (exact):** Build the final art from the chosen concept, export `public/assets/img/ads/ad-5.webp` (≤ 45 KB) with transcribed alt text, add it to Tributes in `public/index.html` and `pdf/program.html`, run `bash scripts/build-pdf.sh` and `bash scripts/check-budget.sh`, and publish with Blake’s OK before the Sun 9:30 AM freeze.
+
+---
+
 ## 2026-09-26 09:48 ET · Claude · Fact-checked the section intro lines (no page changes)
 
 **Did:** Per Blake, checked each intro line against sources; no page edits. Results:
