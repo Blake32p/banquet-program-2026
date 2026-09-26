@@ -14,13 +14,14 @@
 
 ---
 
-## 2026-09-26 19:56 ET · Claude · Blumenthal moved to second in Welcome remarks (local, not yet published)
+## 2026-09-26 19:56 ET · Claude · Blumenthal moved to second in Welcome remarks
 
 **Did:** Per Blake, Senator Richard Blumenthal will speak earlier than planned. Welcome remarks order is now Kathleen Callahan → **Richard Blumenthal** → Susan Bysiewicz → Stephanie Thomas → Sean Scanlon → Ned Lamont. `content/run-of-show.md` table + dated change note first, then `public/index.html`.
 **Checked:** :4173 at 375px: order correct, no console errors, no horizontal overflow. Budget OK; `git diff --check` passes.
 **Decisions:** none.
-**Blocked on / waiting for:** Blake’s OK to publish.
-**Next step (exact):** On OK, commit `content/run-of-show.md`, `public/index.html`, and this log; push; confirm the live HTML matches.
+**Published (19:58 ET):** committed `659959a` and pushed with Blake’s OK; Pages run 36281050455 succeeded; the live HTML is byte-identical and lists Kathleen Callahan → Richard Blumenthal → Susan Bysiewicz → Stephanie Thomas → Sean Scanlon → Ned Lamont.
+**Blocked on / waiting for:** none.
+**Next step (exact):** Content freezes Sun 9:30 AM. Any further run-of-show change: `content/run-of-show.md` first, then `public/index.html`, then publish with Blake’s OK.
 
 ---
 
