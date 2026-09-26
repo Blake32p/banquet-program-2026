@@ -19,8 +19,9 @@
 **Did:** Per Blake, the “PDF · 1.1 MB” note under “Download the program” is now 15px (`.pdf .hint{font-size:.9375rem}`), the project’s minimum text size (same as the photo credit); it had inherited the 19px body size. Tried 17px first; Blake chose 15px (“15pt,” read as the offered 15px).
 **Checked:** :4173 at 375px: link label 19px, note 15px, no horizontal overflow; visual check in the footer. Budget OK; `git diff --check` passes.
 **Decisions:** none.
-**Blocked on / waiting for:** Blake’s OK to publish.
-**Next step (exact):** On OK, commit `public/index.html` and this log, push, and confirm the live HTML matches.
+**Published (09:42 ET):** committed `5d9d368` and pushed with Blake’s OK; Pages run 36246040356 succeeded; the live HTML is byte-identical and serves the 15px rule.
+**Blocked on / waiting for:** none.
+**Next step (exact):** Remaining before the Sat lock: “Presented by” confirmation (D17) and approval of the Honorees and Tributes intro lines.
 
 ---
 
