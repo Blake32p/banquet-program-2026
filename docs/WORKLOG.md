@@ -19,8 +19,9 @@
 **Did:** Blake reported that shared links previewed with the first ad; the page had no `og:image`, so apps picked the first large image. Built `public/assets/img/share-card.jpg` (1200×630, 110,817 bytes): logo, “2026 / ANNUAL AWARDS / Banquet,” sparkles, and “SUNDAY, SEPTEMBER 27 · 11 AM – 2 PM / Blackhawk Country Club” on the page’s navy gradient, using the site’s own fonts and logo. Source: `source-assets/share/share-card.html` (unpublished; render at 1200×630, device scale 1, from the project root on :4174, screenshot, `sips` to JPEG q85). In `public/index.html` `<head>`, replaced the og:image TODO with `og:site_name`, `og:url`, `og:image` (absolute URL) + type/width/height/alt, and `twitter:card=summary_large_image`.
 **Checked:** Render fits with 70px top/bottom margins; fonts and logo loaded. Image served 200 `image/jpeg` locally. Budget OK (the share image is only fetched by link-preview crawlers, so it is not counted). Temp `.playwright-mcp/` removed. `git diff --check` passes.
 **Decisions:** none.
-**Blocked on / waiting for:** Blake’s OK on the image and to publish.
-**Next step (exact):** On OK, commit `public/index.html`, `public/assets/img/share-card.jpg`, `source-assets/share/share-card.html`, and this log; push; confirm the live `og:image` URL returns 200. Previously shared links may keep the old preview (iMessage caches per link; Facebook can be refreshed in its Sharing Debugger).
+**Published (09:38 ET):** Blake approved the image; committed `7d56f45` and pushed; Pages run 36245833254 succeeded. Live HTML is byte-identical to `public/index.html`; `share-card.jpg` returns 200 `image/jpeg` (110,817 bytes); fetched with a `facebookexternalhit` user agent, the page returns all og/twitter tags.
+**Blocked on / waiting for:** none. Previously shared links may keep the old preview (iMessage caches per link; add `?v=2` to force a fresh one; Facebook can re-scrape in its Sharing Debugger).
+**Next step (exact):** Remaining before the Sat lock: “Presented by” confirmation (D17) and approval of the Honorees and Tributes intro lines (agent copy).
 
 ---
 
