@@ -19,8 +19,9 @@
 **Did:** Blake asked whether he can edit the project from his phone as a cloud project. Checked Claude Code’s cloud-session docs (via a claude-code-guide subagent): sessions start from the Claude app’s **Code** tab against the GitHub repo, run on Ubuntu with no Chrome, poppler, or webp preinstalled, and push to a session branch (a PR Blake merges), not to `main`. `scripts/build-pdf.sh` is macOS-only (`sips`, the Mac Chrome path), so the PDF can’t be rebuilt in the cloud. Updated `docs/day-of-changes.md` (a new first section with a ready-to-use request, a tonight test, and the PDF caveat), `AGENTS.md` (what a cloud agent should do instead of the PDF build), and D35.
 **Checked:** The build script’s Mac-only commands (lines 9, 21, 28). Nothing in `public/` changed.
 **Decisions:** D35 extended (cloud-session path).
-**Blocked on / waiting for:** Blake’s OK to push these docs; cloud sessions read the repo from GitHub, so they only see this guidance once it’s pushed. Blake to try a harmless cloud request tonight.
-**Next step (exact):** Push the docs with Blake’s OK. On event day, follow `docs/day-of-changes.md`; after any cloud-session change, rebuild the PDF on the Mac (`bash scripts/build-pdf.sh`) and publish it.
+**Pushed:** Blake said “Push it”; committed `ac6ee4f` and pushed (docs only, so no Pages deploy).
+**Blocked on / waiting for:** Blake to try a harmless cloud request from the phone tonight (and connect GitHub if asked).
+**Next step (exact):** On event day, follow `docs/day-of-changes.md`; after any cloud-session change, rebuild the PDF on the Mac (`bash scripts/build-pdf.sh`) and publish it.
 
 ---
 
