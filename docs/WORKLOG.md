@@ -14,13 +14,14 @@
 
 ---
 
-## 2026-09-26 18:45 ET · Claude · Added the Powers family’s tribute ad as the second Tribute (local, not yet published)
+## 2026-09-26 18:45 ET · Claude · Added the Powers family’s tribute ad as the second Tribute (published)
 
 **Did:** Blake chose concept C (the “Jill” headline, no stars; see the entry below). New `public/assets/img/ads/ad-powers-family.webp` (1000×647, 44,992 bytes, WebP q55 with sharp YUV from a 4000 px render of `content/private/jill-tribute/concepts.html#c`, saved as `final-master.png`). `public/index.html`: new second `<li>` in `.ads` (links to itself full size, new tab, lazy, alt text transcribes the ad), updated the Tributes comment, and the download label now says “PDF · 1.3 MB.” `pdf/program.html`: the ad sits under ad 1 on the Tributes opener (both 5.8 in wide, was 6.6 in for ad 1 alone); the other ad pages renumber (`start="3"`, `start="5"`). Rebuilt the PDF. D34 added; AGENTS.md’s ad-book rule notes the exception.
 **Checked:** `build-pdf.sh`/`check-pdf.py` pass: 1,311,558 bytes, 10 pages, 76 of 76 site text blocks, the same 8 photos and ads in the same order as the site, label OK; page 6 viewed (both Jill ads fit; the new ad embeds at 173 ppi), page 7 unchanged. Budget OK: ad 44,992 (cap 46,080), Tributes ads 165,282, full page 277,116 (cap 307,200), first visit unchanged at 111,834. :4173 at 375px: order ad-1 → family → ad-2 → ad-3 → ad-4 → closing; the ad is 338 CSS px wide (≈1:1 with the 1000 px file on a 3× phone); no horizontal overflow at 375 or 320; no console errors. `git diff --check` passes. Every image except the header/footer logo is `loading="lazy"`.
 **Decisions:** D34 (new).
-**Blocked on / waiting for:** Blake’s OK to publish, and whether to hold it until Sunday morning (a surprise for Jill?). Blake offered to raise the 45 KB per-ad cap; not needed (see D34 and the chat).
-**Next step (exact):** With Blake’s OK: `git status`, then commit `public/index.html`, `public/assets/img/ads/ad-powers-family.webp`, the rebuilt PDF, `pdf/program.html`, `AGENTS.md`, and `docs/` (nothing from `content/private/`) and push to `main`; watch `gh run list -R Blake32p/banquet-program-2026`; confirm the live page serves the ad and the 1.3 MB PDF. Content freezes Sun 9:30 AM.
+**Published (18:55 ET):** Blake said “Publish it now.” Committed `fe89dc2` and pushed to `main`; Pages run 36276796107 succeeded. The live `index.html` is byte-identical to local; `ad-powers-family.webp` returns 200 `image/webp` (44,992 bytes) and the PDF 200 `application/pdf` (1,311,558 bytes). Blake offered to raise the 45 KB per-ad cap; not needed, since the 1000 px file is already about 1:1 on a phone.
+**Blocked on / waiting for:** none.
+**Next step (exact):** Nothing open for the tribute ad. Content freezes Sun 9:30 AM; any change before then goes into `public/index.html` and `pdf/program.html`, then `bash scripts/build-pdf.sh` and `bash scripts/check-budget.sh`, then publish with Blake’s OK.
 
 ---
 
