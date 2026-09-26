@@ -14,13 +14,24 @@
 
 ---
 
+## 2026-09-26 09:33 ET · Claude · Link-preview (share) image of the page top (local, not yet published)
+
+**Did:** Blake reported that shared links previewed with the first ad; the page had no `og:image`, so apps picked the first large image. Built `public/assets/img/share-card.jpg` (1200×630, 110,817 bytes): logo, “2026 / ANNUAL AWARDS / Banquet,” sparkles, and “SUNDAY, SEPTEMBER 27 · 11 AM – 2 PM / Blackhawk Country Club” on the page’s navy gradient, using the site’s own fonts and logo. Source: `source-assets/share/share-card.html` (unpublished; render at 1200×630, device scale 1, from the project root on :4174, screenshot, `sips` to JPEG q85). In `public/index.html` `<head>`, replaced the og:image TODO with `og:site_name`, `og:url`, `og:image` (absolute URL) + type/width/height/alt, and `twitter:card=summary_large_image`.
+**Checked:** Render fits with 70px top/bottom margins; fonts and logo loaded. Image served 200 `image/jpeg` locally. Budget OK (the share image is only fetched by link-preview crawlers, so it is not counted). Temp `.playwright-mcp/` removed. `git diff --check` passes.
+**Decisions:** none.
+**Blocked on / waiting for:** Blake’s OK on the image and to publish.
+**Next step (exact):** On OK, commit `public/index.html`, `public/assets/img/share-card.jpg`, `source-assets/share/share-card.html`, and this log; push; confirm the live `og:image` URL returns 200. Previously shared links may keep the old preview (iMessage caches per link; Facebook can be refreshed in its Sharing Debugger).
+
+---
+
 ## 2026-09-26 09:30 ET · Claude · Bottom tabs evenly spaced; gold marker follows each tab’s width
 
 **Did:** Per Blake, the four tab labels now have equal gaps. `public/index.html`: `.tabbar li{flex:1 1 auto}` (label width + equal share of the leftover space; the whole bar stays tappable) and `.tabbar ul{position:relative}` moved out of the motion block. The gliding marker now uses `left:0; width:var(--tab-w); transform:translateX(var(--tab-x))` (width and position animate); the fixed quarter-width and `nth-child` rules were removed. Script: `place()` measures the active tab’s `offsetLeft`/`offsetWidth` into those properties after each `mark()`, on `resize`, and after `document.fonts.ready`. Updated the tab-bar lines in `docs/03-design-system.md`. JS is now 1,799 bytes (≤ 2 KB).
 **Checked:** Before (live): gaps 8·10·24px at 320, 22·24·37px at 375. After (:4173): 16·16·16 with 8px edges at 320; 30·30·30 with 15px edges at 375; 87·87·87 at 768; no horizontal overflow; narrowest tab (About) 64px at 320. Marker matches the active tab exactly for Program, Honorees, Tributes, and About, scrolling down and back up, and re-aligns after resizing 320 → 768 → 375. No console errors. Budget OK. Reduced-motion fallback (per-tab inset bar) is unchanged and not re-tested; without JS there is no active tab, as before.
 **Decisions:** none new (tab-bar detail under D5/D30).
-**Blocked on / waiting for:** nothing; Blake approved publishing.
-**Next step (exact):** Commit, push to `main`, confirm the Pages run and that the live HTML matches.
+**Published (09:31 ET):** committed `16892bc` “Space the bottom tabs evenly” and pushed with Blake’s OK; Pages run 36245423605 succeeded; the live HTML is byte-identical to `public/index.html`.
+**Blocked on / waiting for:** none.
+**Next step (exact):** Share image (entry above).
 
 ---
 
