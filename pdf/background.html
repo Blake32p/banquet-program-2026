@@ -1,0 +1,27 @@
+<!doctype html>
+<!--
+  Page backgrounds for the PDF (D33). scripts/build-pdf.sh screenshots this at 150 dpi (1275×1650) into
+  pdf/img/bg-page.jpg and, with ?finale, pdf/img/bg-finale.jpg. The soft lights follow the flyer.
+  Why an image: Chrome rasterizes semi-transparent CSS gradients separately on every PDF page (~100 KB each),
+  but embeds one shared JPEG only once.
+-->
+<meta charset="utf-8">
+<title>PDF page background</title>
+<style>
+html,body{margin:0}
+body{width:816px;height:1056px;background:
+  radial-gradient(ellipse 70% 45% at 22% 26%,rgba(26,38,110,.9),rgba(26,38,110,0)),
+  radial-gradient(ellipse 60% 40% at 82% 78%,rgba(22,32,96,.75),rgba(22,32,96,0)),
+  radial-gradient(ellipse 55% 32% at 0% 100%,rgba(78,72,100,.6),rgba(78,72,100,0)),
+  radial-gradient(ellipse 50% 30% at 100% 0%,rgba(66,66,86,.55),rgba(66,66,86,0)),
+  #0b1027}
+/* Closing page: the site's soft blue glow behind the Congratulations art (D18). */
+body.finale{background:
+  radial-gradient(closest-side at 50% 33%,rgba(64,92,196,.55),rgba(64,92,196,0)),
+  radial-gradient(ellipse 55% 32% at 0% 100%,rgba(78,72,100,.6),rgba(78,72,100,0)),
+  radial-gradient(ellipse 50% 30% at 100% 0%,rgba(66,66,86,.55),rgba(66,66,86,0)),
+  #0b1027}
+</style>
+<body>
+<script>if(location.search==='?finale')document.body.className='finale'</script>
+</body>

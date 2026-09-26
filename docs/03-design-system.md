@@ -75,7 +75,7 @@ Poppins and Allura are self-hosted WOFF2 subsets under the SIL Open Font License
 | Third-party asset requests | **0** |
 | PDF (on tap only) | ≤ 1.5 MB, with actual size shown beside its link |
 
-The published redesign measures 10,590 bytes gzipped HTML and 110,853 bytes for the first visit (budget script, 2026-09-23). Its JavaScript is 1,469 bytes. The PDF has not been built.
+The published redesign measures 10,590 bytes gzipped HTML and 110,853 bytes for the first visit (budget script, 2026-09-23). Its JavaScript is 1,469 bytes. The PDF (D33) is 1.1 MB, published 2026-09-26.
 
 Techniques we use:
 - Inline CSS and self-hosted assets. The header and footer reference the same logo SVG file, so the browser downloads it once. (Inlining it would leave only ~230 bytes under the HTML budget; D31.)
@@ -98,4 +98,6 @@ cwebp -q 70 -m 6 -sharp_yuv r.png -o public/assets/img/name.webp
 
 ## Print / PDF styles
 
-`@media print` switches to white paper and dark text and hides navigation/disclosure controls. The `beforeprint` handler expands biographies; check all are open when generating the PDF. Animation rules are screen-only. See `docs/05-launch-checklist.md` → “Build the PDF.”
+`@media print` in `public/index.html` is only for guests who print the web page: it switches to white paper and dark text, hides navigation/disclosure controls, and the `beforeprint` handler expands biographies. Animation rules are screen-only.
+
+The downloadable PDF is separate (D33): `pdf/program.html`, 10 US Letter pages in the flyer's look (full-bleed navy with soft lights, gold Poppins caps, Allura script, gold sparkles), the same tokens as the site, bios at 11 pt, and one honoree per page. Chrome rasterizes semi-transparent CSS gradients separately on every PDF page, so the backgrounds are one shared JPEG rendered from `pdf/background.html`, and images are JPEG copies (Chrome re-encodes WebP losslessly). See `docs/05-launch-checklist.md` → “Build the PDF.”

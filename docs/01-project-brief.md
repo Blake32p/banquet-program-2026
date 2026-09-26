@@ -58,7 +58,7 @@ Hero and honoree roll → Program → Honorees → Congratulations and Karen and
 | “Paid for by” attribution line | ❓ Confirm whether it's needed | Chair / Treasurer |
 | Logo | ✅ Have | `Logos/stratford-democrats-light.svg` |
 | Script font used on the flyer | ✅ Allura 400, self-hosted subset (D4) | Confirmed by Blake |
-| PDF keepsake | ❓ Not built; source decision D7 pending | Owner / committee |
+| PDF keepsake | ✅ Published 2026-09-26 (D33), 1.1 MB; Blake may request more changes | Owner / committee |
 
 ## What we learned from last year's program
 

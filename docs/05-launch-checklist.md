@@ -20,19 +20,15 @@
 
 ## B. Build the PDF (keepsake / backup)
 
-The recommended default (D7) is to generate it from the site, so it always matches.
-1. Start the preview server (see AGENTS.md).
-2. Print with headless Chrome:
+The PDF is built from its own print layout, `pdf/program.html`, using the site's exact words (D7, D33).
+1. If the page's words changed, make the same change in `pdf/program.html` first.
+2. Build and check it:
    ```bash
-   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --disable-gpu \
-     --no-pdf-header-footer --print-to-pdf="public/assets/2026-annual-awards-banquet-program.pdf" \
-     "http://127.0.0.1:4173/"
+   bash scripts/build-pdf.sh
    ```
-   The print stylesheet expands every bio automatically. If headless printing doesn't fire `beforeprint`, add `<details open>` temporarily, or print from Chrome's Print dialog with “Background graphics” off.
-3. Check the file: letter size, readable, names correct, **≤ 1.5 MB**.
-4. Update the button label in `public/index.html` with the real size (e.g. `PDF · 420 KB`). `scripts/check-budget.sh` prints the size.
-
-If the committee prefers the Canva design as the PDF: export it from Canva as **“PDF Standard”** (not Print), then compress it to 2 MB or less. Also check that its content matches the web page exactly.
+   This converts the site's images to JPEG, renders the page backgrounds, prints `public/assets/2026-annual-awards-banquet-program.pdf` with headless Chrome, and runs `scripts/check-pdf.py`. The check fails if any site text is missing from the PDF, a page overflows, a fallback font is embedded, the file is over **1.5 MB**, or the download link's size label (“PDF · 1.1 MB”) no longer matches. It prints the label to use.
+3. Look at every page (open the PDF in Preview): names, times, photo credit, ads in order.
+4. Publish the PDF together with the page change (with Blake's OK).
 
 ## C. Pre-launch QA (Friday)
 

@@ -29,6 +29,8 @@ A **digital-only program** for the Stratford Democratic Town Committee's 2026 An
 | `public/index.html` | The whole program: one page with inline CSS and about 1.5 KB of JS (the 2026-09-23 redesign, ported from `docs/mockups/redesign-v1.html`) | Yes |
 | `public/assets/img/` | Compressed WebP images and the minified logo SVG | Yes |
 | `public/assets/fonts/` | Poppins 400/700 and Allura 400 (the flyer’s script, ASCII subset). Playfair Display was removed with the redesign. All SIL OFL. | Yes |
+| `public/assets/2026-annual-awards-banquet-program.pdf` | The downloadable PDF keepsake (D33), linked at the bottom of the page. **Build output; never edit it by hand** | Yes |
+| `pdf/` | Source for that PDF: `program.html` (10 Letter pages in the flyer’s navy and gold) and `background.html`. `pdf/img/` is build output (gitignored) | No |
 | `content/` | **Source of truth for words.** Honoree bios, run of show, About/footer; archived sponsor reference | No |
 | `content/private/` | Internal run-of-show notes and anything not for guests (gitignored) | No |
 | `docs/` | Brief, hosting research, design system, timeline, launch checklist, decisions, worklog | No |
@@ -36,6 +38,7 @@ A **digital-only program** for the Stratford Democratic Town Committee's 2026 An
 | `source-assets/` | Original, full-size photos | No |
 | `Logos/` | Logo files supplied by the owner. Use `stratford-democrats-light.svg` on dark backgrounds | No |
 | `scripts/check-budget.sh` | Page-weight check. Run it before every handoff | No |
+| `scripts/build-pdf.sh` | Builds the PDF with headless Chrome, then runs `scripts/check-pdf.py` (fails if the PDF’s words no longer match the page) | No |
 | `print/` | Table-card QR code (`qr-program.svg` for print, plus a 1200px PNG). It encodes `HTTPS://PROGRAM.STRATFORDDEMOCRATS.COM` | No |
 | `.github/workflows/pages.yml` | Deploys `public/` to GitHub Pages on every push to `main` that changes `public/` | No |
 
@@ -48,6 +51,7 @@ A **digital-only program** for the Stratford Democratic Town Committee's 2026 An
 - Credit Corrie’s photo: “Photo by Luke Franke.” (It is the caption on her photo on the event page.)
 - The **closing “Congratulations!” page** (from the last page of the Canva program) is the **last ad in the Tributes section**, the program’s ad book (D32). Keep its text exactly as written. The other ads are the committee’s artwork from `original-ad-images/`, in their numbered order, as compressed WebP in `public/assets/img/ads/`, with alt text that transcribes each ad. A separate footer follows **Karen and Kathleen’s sign-off**: **About → Stay connected → PDF availability → Stratford Democrats logo**. Omit the footer email address and phone number (D24). Omit the additional Terry Backer award-background block (D22; the ad book, D32, replaces the old Sponsors idea); retain Corrie’s award title and biography.
 - The program schedule comes from the committee's run of show (`content/run-of-show.md`). Changes are expected, so apply each new version there first.
+- **The PDF repeats the page’s words (D33).** After any content change in `public/index.html`, make the same change in `pdf/program.html`, run `bash scripts/build-pdf.sh`, and publish the rebuilt PDF together with the page change. The build fails if any site text is missing from the PDF, a page overflows, a fallback font slips in, the file exceeds 1.5 MB, or the download link’s size label is out of date.
 
 **Speed** (guests may have weak cell service)
 - No frameworks, no build step, no CDNs, no third-party scripts, trackers, embeds, or web-font services. Everything is served from `public/`.
@@ -85,6 +89,13 @@ Open http://127.0.0.1:4173 and check it at 320, 375, 414, and 768 px wide. In Ch
 ```bash
 bash scripts/check-budget.sh
 ```
+
+## Rebuild the PDF
+
+```bash
+bash scripts/build-pdf.sh
+```
+Needs Google Chrome, `dwebp` (`brew install webp`), and poppler (`brew install poppler`). It serves the project on a temporary local port because Chrome won’t load web fonts into a `file://` page. To look at the pages in a browser, serve the project root and open `/pdf/program.html` (run the build once first so `pdf/img/` exists).
 
 ## Deploy (D1, adopted 2026-09-23)
 

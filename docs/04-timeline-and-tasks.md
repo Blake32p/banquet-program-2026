@@ -25,7 +25,7 @@ Legend: 👤 owner (Blake) · 🏛️ committee (Kathleen/Karen/event team) · �
 
 ## Fri Sep 25: PDF preparation and full QA
 - 👤/🤖 When Blake requests it, port the approved mockup to `public/index.html`, including D21–D26, then run the launch checks. Publication needs separate authorization.
-- 🤖 Build the PDF (doc 05) and label the button with its real size
+- ✅ Build the PDF (doc 05) and label the link with its real size (Claude, 2026-09-25; D33, published 2026-09-26)
 - 🤖 Add the og:image (the link preview when the program is texted)
 - 🤖/👤 Full QA checklist on a real iPhone and a real Android phone, including DevTools “Slow 4G”
 - 🏛️ Final proofread by the Chair: names, titles, times, and spelling

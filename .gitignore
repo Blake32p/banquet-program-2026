@@ -11,3 +11,6 @@ node_modules/
 
 # Original ad artwork (full-size PNGs with contact details). Compressed copies live in public/assets/img/ads/ (D32).
 original-ad-images/
+
+# PDF build output: JPEG copies of public/ images and the rendered page backgrounds (scripts/build-pdf.sh makes them).
+pdf/img/
