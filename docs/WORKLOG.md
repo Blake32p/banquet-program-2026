@@ -14,14 +14,16 @@
 
 ---
 
-## 2026-09-26 19:59 ET · Claude · PDF rebuilt with Blumenthal’s new position (local, not yet published)
+## 2026-09-26 19:59 ET · Claude · PDF rebuilt with Blumenthal’s new position; PDF order check added
 
 **Did:** Blake asked whether the PDF updated with the Blumenthal reorder (`659959a`). It had not: `pdf/program.html` and the published PDF still listed him fifth. Moved his line in `pdf/program.html` to match `public/index.html`, then ran `bash scripts/build-pdf.sh`.
 **Checked:** Build’s own check: 10 pages, 1,312,691 bytes, 76/76 site text blocks found, size label “PDF · 1.3 MB” still correct. `pdftotext` shows Welcome remarks as Kathleen Callahan → Richard Blumenthal → Susan Bysiewicz → Stephanie Thomas → Sean Scanlon → Ned Lamont; rendered page 2 looks right. Only `pdf/program.html` and the PDF changed (regenerated JPEGs identical).
 **Gap found:** `scripts/check-pdf.py` confirms every site text block appears in the PDF but not their **order**, so it passed on the stale PDF. A reordering on the site must be mirrored in `pdf/program.html` by hand; consider adding an order check.
+**Published (20:03 ET):** with Blake’s OK, committed `db8c368` and pushed; Pages run 36281292632 succeeded; the live PDF is byte-identical to the rebuild and lists Blumenthal second.
+**Order check added (20:05 ET):** `scripts/check-pdf.py` now also fails if site text appears in the PDF in a different order (`out_of_order()`: each search starts after the previous match, so repeated names are handled). Photo credits are skipped for order only (`ORDER_SKIP`), because the PDF sets them beside the portrait and pdftotext reads them after the name; the text check still requires them. Tested: the current PDF passes; the stale PDF (`eb1f4e9`) fails naming Bysiewicz, Thomas, and Scanlon “should come after Senator Richard Blumenthal”; the three earlier PDFs also fail (they predate today’s reorder). Updated the check descriptions in `AGENTS.md` and `docs/05-launch-checklist.md`.
 **Decisions:** none.
-**Blocked on / waiting for:** Blake’s OK to publish.
-**Next step (exact):** On OK, commit `pdf/program.html`, the PDF, and this log; push; confirm the live PDF has the new order.
+**Blocked on / waiting for:** none.
+**Next step (exact):** For any event-day change: edit `public/index.html` and `pdf/program.html` to match, run `bash scripts/build-pdf.sh` (it now checks order too), then publish with Blake’s OK.
 
 ---
 

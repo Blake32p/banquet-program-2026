@@ -38,7 +38,7 @@ A **digital-only program** for the Stratford Democratic Town Committee's 2026 An
 | `source-assets/` | Original, full-size photos | No |
 | `Logos/` | Logo files supplied by the owner. Use `stratford-democrats-light.svg` on dark backgrounds | No |
 | `scripts/check-budget.sh` | Page-weight check. Run it before every handoff | No |
-| `scripts/build-pdf.sh` | Builds the PDF with headless Chrome, then runs `scripts/check-pdf.py` (fails if the PDF’s words no longer match the page) | No |
+| `scripts/build-pdf.sh` | Builds the PDF with headless Chrome, then runs `scripts/check-pdf.py` (fails if the PDF’s words, or their order, no longer match the page) | No |
 | `print/` | Table-card QR code (`qr-program.svg` for print, plus a 1200px PNG). It encodes `HTTPS://PROGRAM.STRATFORDDEMOCRATS.COM` | No |
 | `.github/workflows/pages.yml` | Deploys `public/` to GitHub Pages on every push to `main` that changes `public/` | No |
 

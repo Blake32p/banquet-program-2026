@@ -3,8 +3,9 @@
 (scripts/build-pdf.sh runs it after every build.)
 
 Fails if the PDF is missing, the wrong size or page count, uses a fallback font, has a page whose
-content overflowed, or no longer contains every piece of guest-facing text on public/index.html
-(schedule, honoree names and presenters, verbatim bios, closing note, About, links). Needs poppler.
+content overflowed, no longer contains every piece of guest-facing text on public/index.html
+(schedule, honoree names and presenters, verbatim bios, closing note, About, links), or has that
+text in a different order than the site (for example, a reordered speaker list). Needs poppler.
 """
 import html.parser, os, re, subprocess, sys, unicodedata
 
@@ -17,6 +18,10 @@ PDF_MAX = 1_500_000  # 1.5 MB (docs/03-design-system.md)
 
 # Web-only wording that the PDF leaves out on purpose.
 WEB_ONLY = ["Tap one to see it full size."]
+
+# Blocks the order check skips: the PDF sets photo credits beside the portrait, so pdftotext reads them
+# after the name. The text check still requires them.
+ORDER_SKIP = ["Photo by Luke Franke"]
 
 BLOCKS = {"p", "h1", "h2", "h3", "h4", "li", "time", "figcaption", "summary"}
 SKIP_CLASSES = {"sr-only", "tabbar", "pdf", "skip"}
@@ -68,6 +73,23 @@ def squash(s):
     return re.sub(r"[\s-]+", "", s)
 
 
+def out_of_order(items, flat):
+    """Site blocks that are in the PDF but not in the site's order (for example, a speaker moved on
+    the site but not in pdf/program.html). Each search starts after the previous match, so names that
+    repeat (honoree box, schedule, honoree pages) are matched in sequence. Returns (after, item) pairs."""
+    wrong, pos, prev = [], 0, None
+    for item in items:
+        key = squash(item)
+        if not key or key not in flat:
+            continue  # missing text is reported by the text check
+        i = flat.find(key, pos)
+        if i < 0:
+            wrong.append((prev, item))
+            continue
+        pos, prev = i + len(key), item
+    return wrong
+
+
 def run(*cmd):
     return subprocess.run(cmd, check=True, capture_output=True, text=True).stdout
 
@@ -110,14 +132,21 @@ def main():
     parser = Blocks()
     parser.feed(site)
     flat = squash(text)
-    missing = []
+    items, missing = [], []
     for item in parser.out:
         for w in WEB_ONLY:
             item = item.replace(w, "")
+        if item.strip() and item.strip() not in ORDER_SKIP:
+            items.append(item)
         if item.strip() and squash(item) not in flat:
             missing.append(item)
     print(f"Text check: {len(parser.out) - len(missing)} of {len(parser.out)} site text blocks found in the PDF")
     problems.extend("not in the PDF (or different): " + m for m in missing)
+
+    wrong = out_of_order(items, flat)
+    print(f"Order check: {'same order as the site' if not wrong else f'{len(wrong)} block(s) out of order'}")
+    problems.extend(f"order differs from the site: {item!r} should come after {after!r} "
+                    "(match the order in pdf/program.html, then rebuild)" for after, item in wrong[:5])
 
     web_imgs = re.findall(r'src="assets/img/(?:ads/)?([\w-]+)\.webp"', site)
     pdf_imgs = re.findall(r'src="img/([\w-]+)\.jpg"', src)

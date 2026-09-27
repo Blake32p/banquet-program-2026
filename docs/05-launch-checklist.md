@@ -26,7 +26,7 @@ The PDF is built from its own print layout, `pdf/program.html`, using the site's
    ```bash
    bash scripts/build-pdf.sh
    ```
-   This converts the site's images to JPEG, renders the page backgrounds, prints `public/assets/2026-annual-awards-banquet-program.pdf` with headless Chrome, and runs `scripts/check-pdf.py`. The check fails if any site text is missing from the PDF, a page overflows, a fallback font is embedded, the file is over **1.5 MB**, or the download link's size label (“PDF · 1.1 MB”) no longer matches. It prints the label to use.
+   This converts the site's images to JPEG, renders the page backgrounds, prints `public/assets/2026-annual-awards-banquet-program.pdf` with headless Chrome, and runs `scripts/check-pdf.py`. The check fails if any site text is missing from the PDF or appears in a different order (for example, a reordered speaker list), a page overflows, a fallback font is embedded, the file is over **1.5 MB**, or the download link's size label (“PDF · 1.1 MB”) no longer matches. It prints the label to use.
 3. Look at every page (open the PDF in Preview): names, times, photo credit, ads in order.
 4. Publish the PDF together with the page change (with Blake's OK).
 
