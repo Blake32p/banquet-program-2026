@@ -14,6 +14,17 @@
 
 ---
 
+## 2026-09-26 19:59 ET · Claude · PDF rebuilt with Blumenthal’s new position (local, not yet published)
+
+**Did:** Blake asked whether the PDF updated with the Blumenthal reorder (`659959a`). It had not: `pdf/program.html` and the published PDF still listed him fifth. Moved his line in `pdf/program.html` to match `public/index.html`, then ran `bash scripts/build-pdf.sh`.
+**Checked:** Build’s own check: 10 pages, 1,312,691 bytes, 76/76 site text blocks found, size label “PDF · 1.3 MB” still correct. `pdftotext` shows Welcome remarks as Kathleen Callahan → Richard Blumenthal → Susan Bysiewicz → Stephanie Thomas → Sean Scanlon → Ned Lamont; rendered page 2 looks right. Only `pdf/program.html` and the PDF changed (regenerated JPEGs identical).
+**Gap found:** `scripts/check-pdf.py` confirms every site text block appears in the PDF but not their **order**, so it passed on the stale PDF. A reordering on the site must be mirrored in `pdf/program.html` by hand; consider adding an order check.
+**Decisions:** none.
+**Blocked on / waiting for:** Blake’s OK to publish.
+**Next step (exact):** On OK, commit `pdf/program.html`, the PDF, and this log; push; confirm the live PDF has the new order.
+
+---
+
 ## 2026-09-26 19:56 ET · Claude · Blumenthal moved to second in Welcome remarks
 
 **Did:** Per Blake, Senator Richard Blumenthal will speak earlier than planned. Welcome remarks order is now Kathleen Callahan → **Richard Blumenthal** → Susan Bysiewicz → Stephanie Thomas → Sean Scanlon → Ned Lamont. `content/run-of-show.md` table + dated change note first, then `public/index.html`.
